@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios eBay - Sirius Usa LLC</title>
+    <style>
+        /* Reutilizar estilos base */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-black: #000000;
+            --accent-gold: #f59e0b;
+            --ebay-blue: #0064d2;
+            --ebay-red: #e53238;
+            --ebay-green: #86b817;
+            --ebay-yellow: #f5af02;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-bg);
+        }
+        
+        .nav-menu a.active {
+            color: var(--ebay-blue);
+            background: var(--light-bg);
+        }
+        
+        /* Header Específico para eBay */
+        .ebay-header {
+            background: linear-gradient(135deg, var(--ebay-blue), #1e40af);
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ebay-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(229, 50, 56, 0.1) 0%, 
+                rgba(0, 100, 210, 0.1) 25%, 
+                rgba(245, 175, 2, 0.1) 50%, 
+                rgba(134, 184, 23, 0.1) 75%);
+        }
+        
+        .ebay-header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-blue);
+            font-size: 2.8em;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Service Tabs para eBay */
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tab-button {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+        
+        .tab-button.active {
+            background: var(--ebay-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 100, 210, 0.3);
+        }
+        
+        .tab-button:hover:not(.active) {
+            background: var(--light-bg);
+            border-color: var(--ebay-blue);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--ebay-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--ebay-red), 
+                var(--ebay-blue), 
+                var(--ebay-yellow), 
+                var(--ebay-green));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--ebay-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        /* eBay Features Section */
+        .ebay-features {
+            background: var(--light-bg);
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* International Section */
+        .international {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--ebay-blue), #1e40af);
+            color: var(--white);
+        }
+        
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .country-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer {
+            background: var(--secondary-black);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 80px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .countries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="<?= ScriptApp.getService().getUrl() ?>" class="logo">
+                <div class="logo-icon">S</div>
+                Sirius Usa LLC
+            </a>
+            <ul class="nav-menu">
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>">Inicio</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=amazon">Amazon</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=ebay" class="active">eBay</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=procesos">Procesos</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=prepcenters">Prep Centers</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- eBay Header -->
+    <div class="ebay-header">
+        <div class="container">
+            <h1>Servicios eBay</h1>
+            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9; position: relative;">
+                Soluciones completas de dropshipping, wholesale y ventas internacionales en la plataforma global de eBay.
+            </p>
+        </div>
+    </div>
+
+    <!-- Service Tabs -->
+    <div class="container" style="padding: 80px 20px;">
+        <div class="service-tabs">
+            <button class="tab-button active" onclick="openTab('dropshipping')">eBay Dropshipping</button>
+            <button class="tab-button" onclick="openTab('wholesale')">eBay Wholesale</button>
+            <button class="tab-button" onclick="openTab('international')">Ventas Internacionales</button>
+        </div>
+
+        <!-- Dropshipping Tab -->
+        <div id="dropshipping" class="tab-content active">
+            <h2 class="section-title">eBay Dropshipping</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Dropshipping Automatizado</h3>
+                    <p>Sistema completo de dropshipping con proveedores confiables y procesos automatizados.</p>
+                    <ul class="feature-list">
+                        <li>Integración con múltiples proveedores</li>
+                        <li>Procesamiento automático de órdenes</li>
+                        <li>Sincronización de inventario en tiempo real</li>
+                        <li>Gestión de tracking automático</li>
+                        <li>Optimización de márgenes</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Gestión de Listings</h3>
+                    <p>Creación y optimización profesional de listings para maximizar conversiones.</p>
+                    <ul class="feature-list">
+                        <li>Creación masiva de listings</li>
+                        <li>SEO optimizado para eBay</li>
+                        <li>Plantillas profesionales</li>
+                        <li>Gestión de variaciones</li>
+                        <li>Optimización de precios dinámica</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Account Management</h3>
+                    <p>Gestión profesional de cuentas eBay manteniendo métricas óptimas.</p>
+                    <ul class="feature-list">
+                        <li>Mantenimiento de Top Rated Seller</li>
+                        <li>Gestión de feedback y reviews</li>
+                        <li>Resolución de casos y disputas</li>
+                        <li>Optimización de seller standards</li>
+                        <li>Protección contra suspensiones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wholesale Tab -->
+        <div id="wholesale" class="tab-content">
+            <h2 class="section-title">eBay Wholesale</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Sourcing Mayorista</h3>
+                    <p>Identificación y relación con proveedores mayoristas para eBay.</p>
+                    <ul class="feature-list">
+                        <li>Negociación de precios mayoristas</li>
+                        <li>Acceso a productos exclusivos</li>
+                        <li>Verificación de autenticidad</li>
+                        <li>Gestión de relaciones con proveedores</li>
+                        <li>Análisis de rentabilidad</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Inventory Management</h3>
+                    <p>Gestión profesional de inventario para ventas wholesale en eBay.</p>
+                    <ul class="feature-list">
+                        <li>Control de stock en tiempo real</li>
+                        <li>Predicción de demanda</li>
+                        <li>Optimización de reordenes</li>
+                        <li>Gestión de múltiples ubicaciones</li>
+                        <li>Reportes de inventario</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Brand Management</h3>
+                    <p>Gestión de marcas y productos en el marketplace de eBay.</p>
+                    <ul class="feature-list">
+                        <li>Autorizaciones de marca</li>
+                        <li>Protección contra counterfeit</li>
+                        <li>Gestión de catálogos</li>
+                        <li>Relaciones con manufacturers</li>
+                        <li>Programas de brand registry</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- International Tab -->
+        <div id="international" class="tab-content">
+            <h2 class="section-title">Ventas Internacionales</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Global Shipping Program</h3>
+                    <p>Gestión completa del programa de envíos internacionales de eBay.</p>
+                    <ul class="feature-list">
+                        <li>Configuración GSP completa</li>
+                        <li>Gestión de aduanas e impuestos</li>
+                        <li>Documentación internacional</li>
+                        <li>Seguimiento global</li>
+                        <li>Soporte multi-idioma</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Multi-marketplace Strategy</h3>
+                    <p>Estrategias para ventas en múltiples marketplaces internacionales.</p>
+                    <ul class="feature-list">
+                        <li>Expansión a mercados europeos</li>
+                        <li>Localización de listings</li>
+                        <li>Gestión de divisas</li>
+                        <li>Compliance internacional</li>
+                        <li>Análisis de mercados globales</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>International Compliance</h3>
+                    <p>Cumplimiento de regulaciones internacionales y estándares.</p>
+                    <ul class="feature-list">
+                        <li>Normativas de exportación</li>
+                        <li>Requisitos de importación por país</li>
+                        <li>Certificaciones internacionales</li>
+                        <li>Gestión de restricciones</li>
+                        <li>Asesoría legal internacional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- eBay Features Section -->
+    <div class="ebay-features">
+        <div class="container">
+            <h2 class="section-title">Ventajas de eBay</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌎</div>
+                    <h4>Alcance Global</h4>
+                    <p>Acceso a mercados internacionales con el Global Shipping Program</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h4>Menos Competencia</h4>
+                    <p>Mercado menos saturado que Amazon con buenos márgenes</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Flexibilidad</h4>
+                    <p>Múltiples modelos de negocio: auctions, fixed price, offers</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Protección al Vendedor</h4>
+                    <p>Sistema robusto de protección contra fraudes y chargebacks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- International Markets Section -->
+    <div class="international">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Mercados Internacionales</h2>
+            <div class="countries-grid">
+                <div class="country-item">
+                    <h4>🇺🇸 USA</h4>
+                    <p>Mercado principal</p>
+                </div>
+                <div class="country-item">
+                    <h4>🇬🇧 UK</h4>
+                    <p>eBay.co.uk</p>
+                </div>
+                <div class="country-item">
+                    <h4>🇩🇪 Alemania</h4>
+                    <p>eBay.de</p>
+                </div>
+                <div class="country-item">
+                    <h4>🇦🇺 Australia</h4>
+                    <p>eBay.com.au</p>
+                </div>
+                <div class="country-item">
+                    <h4>🇨🇦 Canadá</h4>
+                    <p>eBay.ca</p>
+                </div>
+                <div class="country-item">
+                    <h4>🇪🇸 España</h4>
+                    <p>eBay.es</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
+            <p>eBay Dropshipping & Wholesale Experts</p>
+            <div style="margin-top: 20px; opacity: 0.8;">
+                Andres E Ventura | insiriusworld@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the specific tab content and activate button
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
