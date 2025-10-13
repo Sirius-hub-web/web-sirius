@@ -509,14 +509,13 @@
                 <div class="logo-icon">S</div>
                 Sirius Usa LLC
             </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="amazon.html">Amazon</a></li>
-                <li><a href="ebay.html">eBay</a></li>
-                <li><a href="procesos.html">Procesos</a></li>
-                <li><a href="prepcenters.html">Prep Centers</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="nosotros.html" style="color: var(--primary-blue);">Nosotros</a></li>
+           <ul class="nav-menu">
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>">Inicio</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=amazon" class="active">Amazon</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=ebay">eBay</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=procesos">Procesos</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=prepcenters">Prep Centers</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=contacto">Contacto</a></li>
             </ul>
         </div>
     </nav>
