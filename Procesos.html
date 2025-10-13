@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos de Trabajo - Sirius Usa LLC</title>
+    <style>
+        /* Reutilizar estilos base */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-black: #000000;
+            --accent-gold: #f59e0b;
+            --process-green: #10b981;
+            --process-purple: #8b5cf6;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-bg);
+        }
+        
+        .nav-menu a.active {
+            color: var(--process-green);
+            background: var(--light-bg);
+        }
+        
+        /* Header Específico para Procesos */
+        .processes-header {
+            background: linear-gradient(135deg, var(--process-green), #059669);
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+        
+        .processes-header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-blue);
+            font-size: 2.8em;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--process-green);
+            transform: translateX(-50%);
+        }
+        
+        .process-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .process-step:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .step-content {
+            width: 45%;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--process-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .step-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        
+        .step-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .step-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .step-features li:before {
+            content: "✓";
+            color: var(--process-green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Quality Control Section */
+        .quality-section {
+            background: var(--light-bg);
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+        
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .quality-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 4px solid var(--process-purple);
+        }
+        
+        .quality-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .quality-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        /* Logistics Section */
+        .logistics-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            color: var(--white);
+        }
+        
+        .logistics-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .logistics-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logistics-step h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+        
+        /* Technology Section */
+        .technology-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .tech-item {
+            padding: 30px 20px;
+        }
+        
+        .tech-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--process-green);
+        }
+        
+        .footer {
+            background: var(--secondary-black);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 80px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .process-timeline::before {
+                left: 30px;
+            }
+            
+            .process-step {
+                flex-direction: column !important;
+                align-items: flex-start;
+                margin-left: 60px;
+            }
+            
+            .step-content {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+            
+            .step-number {
+                left: -80px;
+                transform: none;
+            }
+            
+            .quality-grid,
+            .logistics-steps,
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="<?= ScriptApp.getService().getUrl() ?>" class="logo">
+                <div class="logo-icon">S</div>
+                Sirius Usa LLC
+            </a>
+            <ul class="nav-menu">
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>">Inicio</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=amazon">Amazon</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=ebay">eBay</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=procesos" class="active">Procesos</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=prepcenters">Prep Centers</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Processes Header -->
+    <div class="processes-header">
+        <div class="container">
+            <h1>Nuestros Procesos</h1>
+            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Flujo de trabajo optimizado y sistemas de control de calidad para garantizar el éxito en cada operación.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Process Timeline -->
+    <div class="container">
+        <h2 class="section-title">Flujo de Trabajo Completo</h2>
+        
+        <div class="process-timeline">
+            <!-- Step 1 -->
+            <div class="process-step">
+                <div class="step-content">
+                    <div class="step-number">1</div>
+                    <h3>Investigación de Productos</h3>
+                    <p>Identificamos oportunidades de mercado usando herramientas avanzadas de análisis.</p>
+                    <ul class="step-features">
+                        <li>Análisis de tendencias de mercado</li>
+                        <li>Investigación de competencia</li>
+                        <li>Análisis de margen y rentabilidad</li>
+                        <li>Evaluación de estacionalidad</li>
+                        <li>Identificación de gaps de mercado</li>
+                    </ul>
+                </div>
+                <div class="step-content">
+                    <div class="step-number">2</div>
+                    <h3>Sourcing y Proveedores</h3>
+                    <p>Conectamos con proveedores confiables y establecemos relaciones estratégicas.</p>
+                    <ul class="step-features">
+                        <li>Evaluación de proveedores</li>
+                        <li>Negociación de precios</li>
+                        <li>Verificación de calidad inicial</li>
+                        <li>Establecimiento de términos</li>
+                        <li>Gestión de relaciones a largo plazo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+                <div class="step-content">
+                    <div class="step-number">3</div>
+                    <h3>Control de Calidad</h3>
+                    <p>Inspección exhaustiva de productos antes del envío a prep centers.</p>
+                    <ul class="step-features">
+                        <li>Inspección visual detallada</li>
+                        <li>Pruebas funcionales (cuando aplica)</li>
+                        <li>Verificación de especificaciones</li>
+                        <li>Documentación de defectos</li>
+                        <li>Aprobación final de calidad</li>
+                    </ul>
+                </div>
+                <div class="step-content">
+                    <div class="step-number">4</div>
+                    <h3>Prep Center Coordination</h3>
+                    <p>Coordinación estratégica con prep centers para preparación final.</p>
+                    <ul class="step-features">
+                        <li>Re-packaging profesional</li>
+                        <li>Aplicación de etiquetas FNSKU</li>
+                        <li>Preparación para FBA/FBM</li>
+                        <li>Almacenamiento temporal</li>
+                        <li>Gestión de inventario</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+                <div class="step-content">
+                    <div class="step-number">5</div>
+                    <h3>Listings y Optimización</h3>
+                    <p>Creación y optimización de listings para maximizar conversiones.</p>
+                    <ul class="step-features">
+                        <li>SEO avanzado para marketplaces</li>
+                        <li>Optimización de imágenes</li>
+                        <li>Escritura de copy persuasivo</li>
+                        <li>Investigación de keywords</li>
+                        <li>A/B testing de listings</li>
+                    </ul>
+                </div>
+                <div class="step-content">
+                    <div class="step-number">6</div>
+                    <h3>Fulfillment y Envíos</h3>
+                    <p>Gestión eficiente de envíos según el modelo (FBM o FBA).</p>
+                    <ul class="step-features">
+                        <li>Gestión de órdenes en tiempo real</li>
+                        <li>Optimización de costos de envío</li>
+                        <li>Seguimiento automatizado</li>
+                        <li>Gestión de devoluciones</li>
+                        <li>Soporte al cliente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quality Control Section -->
+    <div class="quality-section">
+        <div class="container">
+            <h2 class="section-title">Control de Calidad</h2>
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <div class="quality-icon">🔍</div>
+                    <h3>Inspección Visual</h3>
+                    <p>Revisión minuciosa de cada producto para detectar defectos de fabricación, daños o inconsistencias.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">⚡</div>
+                    <h3>Pruebas Funcionales</h3>
+                    <p>Verificación del funcionamiento correcto de productos electrónicos y dispositivos.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">📋</div>
+                    <h3>Documentación</h3>
+                    <p>Registro detallado de cada inspección para trazabilidad y mejora continua.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">🔄</div>
+                    <h3>Mejora Continua</h3>
+                    <p>Análisis de datos de calidad para identificar tendencias y áreas de mejora.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logistics Section -->
+    <div class="logistics-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Logística y Cadena de Suministro</h2>
+            <div class="logistics-steps">
+                <div class="logistics-step">
+                    <h4>Proveedores → Prep Center</h4>
+                    <p>Envío directo desde proveedores a nuestros prep centers partners para inspección</p>
+                </div>
+                <div class="logistics-step">
+                    <h4>Prep Center → Amazon FBA</h4>
+                    <p>Preparación y envío a warehouses de Amazon para productos FBA</p>
+                </div>
+                <div class="logistics-step">
+                    <h4>Prep Center → Cliente Final</h4>
+                    <p>Envío directo al cliente para órdenes FBM con tracking automatizado</p>
+                </div>
+                <div class="logistics-step">
+                    <h4>Gestión de Devoluciones</h4>
+                    <p>Proceso eficiente para manejo de returns y re-stocking</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="technology-section">
+        <div class="container">
+            <h2 class="section-title">Tecnología y Automatización</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🤖</div>
+                    <h4>Automatización</h4>
+                    <p>Procesos automatizados para eficiencia</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📊</div>
+                    <h4>Analytics</h4>
+                    <p>Análisis de datos en tiempo real</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔗</div>
+                    <h4>Integraciones API</h4>
+                    <p>Conexión con múltiples plataformas</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📈</div>
+                    <h4>Reportes Automatizados</h4>
+                    <p>Métricas y KPIs automáticos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
+            <p>Procesos Optimizados & Control de Calidad</p>
+            <div style="margin-top: 20px; opacity: 0.8;">
+                Andres E Ventura | insiriusworld@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animación para los steps del timeline
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step-content');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            steps.forEach(step => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(step);
+            });
+        });
+    </script>
+</body>
+</html>
