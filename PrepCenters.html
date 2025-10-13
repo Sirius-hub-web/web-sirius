@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership con Prep Centers - Sirius Usa LLC</title>
+    <style>
+        /* Reutilizar estilos base */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-black: #000000;
+            --accent-gold: #f59e0b;
+            --partner-teal: #0d9488;
+            --partner-indigo: #4f46e5;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-bg);
+        }
+        
+        .nav-menu a.active {
+            color: var(--partner-teal);
+            background: var(--light-bg);
+        }
+        
+        /* Header Específico para Prep Centers */
+        .partnership-header {
+            background: linear-gradient(135deg, var(--partner-teal), #0f766e);
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+        
+        .partnership-header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-blue);
+            font-size: 2.8em;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Partnership Benefits */
+        .benefits-section {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 4px solid var(--partner-teal);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--partner-teal);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        /* Requirements Section */
+        .requirements-section {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .requirement-card {
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--partner-indigo);
+        }
+        
+        .requirement-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .requirement-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .requirement-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .requirement-list li:before {
+            content: "•";
+            color: var(--partner-indigo);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--partner-teal), var(--partner-indigo));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.5em;
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        }
+        
+        .process-step h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Partnership Form */
+        .partnership-form-section {
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.9);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--accent-gold);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #e6900b;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--partner-teal);
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: var(--secondary-black);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .benefits-grid,
+            .requirements-grid,
+            .process-steps,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="<?= ScriptApp.getService().getUrl() ?>" class="logo">
+                <div class="logo-icon">S</div>
+                Sirius Usa LLC
+            </a>
+            <ul class="nav-menu">
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>">Inicio</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=amazon">Amazon</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=ebay">eBay</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=procesos">Procesos</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=prepcenters" class="active">Prep Centers</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl() ?>?page=contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Partnership Header -->
+    <div class="partnership-header">
+        <div class="container">
+            <h1>Partnership con Prep Centers</h1>
+            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Establecemos relaciones estratégicas con prep centers confiables para crecimiento mutuo y operaciones eficientes.
+            </p>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Beneficios del Partnership</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Volumen Estable</h3>
+                    <p>Flujo constante de órdenes con volúmenes predecibles que permiten una planificación eficiente de recursos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💳</div>
+                    <h3>Pagos Puntuales</h3>
+                    <p>Procesos de pago automatizados y siempre a tiempo, con términos claros y transparentes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Comunicación Profesional</h3>
+                    <p>Coordinación eficiente mediante sistemas establecidos y puntos de contacto designados.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Crecimiento Conjunto</h3>
+                    <p>Oportunidades de escalar operaciones juntos con estrategias de crecimiento planificadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Requirements Section -->
+    <div class="requirements-section">
+        <div class="container">
+            <h2 class="section-title">Requisitos del Prep Center</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>Capacidades Operativas</h4>
+                    <ul class="requirement-list">
+                        <li>Almacenamiento seguro y organizado</li>
+                        <li>Capacidad de procesamiento: 50+ órdenes/día</li>
+                        <li>Sistema de gestión de inventario</li>
+                        <li>Áreas de recepción e inspección</li>
+                        <li>Espacio para re-packaging</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>Estándares de Calidad</h4>
+                    <ul class="requirement-list">
+                        <li>Procesos de inspección documentados</li>
+                        <li>Control de calidad por múltiples etapas</li>
+                        <li>Manejo de productos delicados</li>
+                        <li>Protocolos de limpieza y organización</li>
+                        <li>Sistema de reporte de defectos</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>Integración Tecnológica</h4>
+                    <ul class="requirement-list">
+                        <li>API o sistema de integración</li>
+                        <li>Actualización de inventario en tiempo real</li>
+                        <li>Sistema de tracking automatizado</li>
+                        <li>Comunicación electrónica eficiente</li>
+                        <li>Reportes automáticos de status</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>Logística y Envíos</h4>
+                    <ul class="requirement-list">
+                        <li>Acuerdos con carriers principales</li>
+                        <li>Procesamiento same-day/next-day</li>
+                        <li>Manejo de envíos internacionales</li>
+                        <li>Sistema de etiquetado FBA/FBM</li>
+                        <li>Gestión de devoluciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="process-section">
+        <div class="container">
+            <h2 class="section-title">Proceso de Onboarding</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-circle">1</div>
+                    <h4>Evaluación Inicial</h4>
+                    <p>Revisión de capacidades y fit estratégico mediante cuestionario y call inicial.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">2</div>
+                    <h4>Prueba Piloto</h4>
+                    <p>Envío de lote pequeño (10-20 unidades) para evaluar calidad y procesos.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">3</div>
+                    <h4>Integración Técnica</h4>
+                    <p>Configuración de sistemas y establecimiento de comunicación automatizada.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">4</div>
+                    <h4>Escalado Gradual</h4>
+                    <p>Aumento progresivo de volumen basado en performance y capacidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <p>Órdenes Diarias Promedio</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <p>Tiempo de Procesamiento</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.8%</div>
+                    <p>Precisión en Órdenes</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <p>Días Pago</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partnership Form Section -->
+    <div class="partnership-form-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Interesado en Partnership?</h2>
+            <div class="form-container">
+                <form id="partnershipForm">
+                    <div class="form-group">
+                        <label for="companyName">Nombre del Prep Center *</label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactName">Nombre de Contacto *</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Ubicación (Estado, Ciudad) *</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="capacity">Capacidad Diaria de Procesamiento *</label>
+                        <select id="capacity" name="capacity" required>
+                            <option value="">Seleccionar capacidad</option>
+                            <option value="1-50">1-50 órdenes/día</option>
+                            <option value="51-200">51-200 órdenes/día</option>
+                            <option value="201-500">201-500 órdenes/día</option>
+                            <option value="500+">500+ órdenes/día</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Experiencia con Amazon FBA/FBM</label>
+                        <select id="experience" name="experience">
+                            <option value="">Seleccionar experiencia</option>
+                            <option value="beginner">Principiante (0-6 meses)</option>
+                            <option value="intermediate">Intermedio (6-24 meses)</option>
+                            <option value="advanced">Avanzado (2+ años)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Información Adicional</label>
+                        <textarea id="message" name="message" placeholder="Describe tus servicios, especialidades, o cualquier información relevante..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Solicitud de Partnership</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
+            <p>Strategic Prep Center Partnerships</p>
+            <div style="margin-top: 20px; opacity: 0.8;">
+                Andres E Ventura | insiriusworld@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form handling
+        document.getElementById('partnershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí iría la lógica para enviar el formulario
+            // Por ahora solo mostramos un alert
+            alert('¡Gracias por tu interés en partnership! Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Animaciones para las cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.benefit-card, .requirement-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
