@@ -794,7 +794,79 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
     </div>
 
     <script>
-        // Smooth scrolling IDÉNTICO al index
+        // =============================================
+        // INTEGRACIÓN CON GOOGLE SHEETS - VERSIÓN CORREGIDA
+        // =============================================
+        
+        // URL DE TU GOOGLE APPS SCRIPT
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxU3EugFlP_SFP1OYYfqgS5rSKUpO5ws6yVRZSj54UoxZXSF96KSSIYKzN5rQ_dD5-KSg/exec';
+        
+        // Manejar el envío del formulario
+        document.getElementById('contact-form-element').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const loading = document.getElementById('loading');
+            const successMessage = document.getElementById('success-message');
+            
+            // Mostrar loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            loading.style.display = 'block';
+            successMessage.style.display = 'none';
+            
+            // Recoger datos del formulario
+            const formData = {
+                partnerType: document.getElementById('partner-type').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                experience: document.getElementById('experience').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value,
+                source: document.getElementById('source').value
+            };
+            
+            // ✅ USAR XMLHttpRequest EN LUGAR DE FETCH (SOLUCIÓN AL CORS)
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', GOOGLE_SCRIPT_URL);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            
+            xhr.onload = function() {
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitBtn.textContent = '📨 Enviar Propuesta de Partnership';
+                loading.style.display = 'none';
+                
+                if (xhr.status === 200) {
+                    // Éxito - mostrar mensaje y resetear formulario
+                    successMessage.style.display = 'block';
+                    document.getElementById('contact-form-element').reset();
+                    
+                    // Hacer scroll suave al mensaje de éxito
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('❌ Error al enviar: ' + xhr.statusText);
+                }
+            };
+            
+            xhr.onerror = function() {
+                // Restaurar botón
+                submitBtn.disabled = false;
+                submitBtn.textContent = '📨 Enviar Propuesta de Partnership';
+                loading.style.display = 'none';
+                alert('❌ Error de conexión. Por favor, intenta nuevamente.');
+            };
+            
+            xhr.send(JSON.stringify(formData));
+        });
+
+        // =============================================
+        // ANIMACIONES Y EFECTOS
+        // =============================================
+        
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -808,7 +880,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
             });
         });
 
-        // Efecto de aparición al hacer scroll IDÉNTICO al index
+        // Efecto de aparición al hacer scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -830,93 +902,6 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
-
-        // =============================================
-        // INTEGRACIÓN CON GOOGLE SHEETS - LISTA PARA USAR
-        // =============================================
-        
-        // REEMPLAZA ESTA URL CON LA DE TU GOOGLE APPS SCRIPT
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxU3EugFlP_SFP1OYYfqgS5rSKUpO5ws6yVRZSj54UoxZXSF96KSSIYKzN5rQ_dD5-KSg/exec';
-        
-        document.getElementById('contact-form-element').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submit-btn');
-            const loading = document.getElementById('loading');
-            const successMessage = document.getElementById('success-message');
-            
-            // Mostrar loading
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-            loading.style.display = 'block';
-            successMessage.style.display = 'none';
-            
-            try {
-                // Recoger datos del formulario
-                const formData = {
-                    partnerType: document.getElementById('partner-type').value,
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    company: document.getElementById('company').value,
-                    experience: document.getElementById('experience').value,
-                    budget: document.getElementById('budget').value,
-                    message: document.getElementById('message').value,
-                    source: document.getElementById('source').value
-                };
-                
-                // Enviar a Google Sheets
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (result.result === 'success') {
-                    // Éxito - mostrar mensaje y resetear formulario
-                    successMessage.style.display = 'block';
-                    document.getElementById('contact-form-element').reset();
-                    
-                    // También enviar email por FormSubmit (opcional)
-                    await sendEmail(formData);
-                    
-                } else {
-                    throw new Error(result.message);
-                }
-                
-            } catch (error) {
-                console.error('Error:', error);
-                alert('❌ Error al enviar: ' + error.message);
-            } finally {
-                // Restaurar botón
-                submitBtn.disabled = false;
-                submitBtn.textContent = '📨 Enviar Propuesta de Partnership';
-                loading.style.display = 'none';
-            }
-        });
-        
-        // Función para enviar email adicional por FormSubmit (opcional)
-        async function sendEmail(formData) {
-            const emailData = new FormData();
-            emailData.append('_subject', `🚀 Nueva Propuesta - ${formData.name}`);
-            emailData.append('name', formData.name);
-            emailData.append('email', formData.email);
-            emailData.append('partnerType', formData.partnerType);
-            emailData.append('message', formData.message);
-            
-            try {
-                await fetch('https://formsubmit.co/insiriusworld@gmail.com', {
-                    method: 'POST',
-                    body: emailData
-                });
-            } catch (emailError) {
-                console.log('Email opcional no enviado:', emailError);
-            }
-        }
     </script>
 </body>
 </html>
