@@ -24,10 +24,12 @@
             --primary-blue: #1e3a8a;
             --secondary-black: #000000;
             --accent-gold: #f59e0b;
-            --success-green: #10b981;
-            --info-blue: #3b82f6;
+            --amazon-orange: #ff9900;
+            --ebay-multicolor: linear-gradient(45deg, #E53238, #0064D2, #F5AF02, #86B817);
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --success-green: #10b981;
+            --info-blue: #3b82f6;
         }
         
         body {
@@ -217,11 +219,11 @@
         }
         
         .amazon-card::before {
-            background: #ff9900;
+            background: var(--amazon-orange);
         }
         
         .ebay-card::before {
-            background: #0064d2;
+            background: var(--ebay-multicolor);
         }
         
         .platform-card:hover {
@@ -279,7 +281,7 @@
             font-size: 1.1em;
         }
         
-        /* Opportunities Section */
+        /* Opportunities Section - NUEVA con estilos originales */
         .opportunities {
             padding: 100px 0;
             background: var(--light-bg);
