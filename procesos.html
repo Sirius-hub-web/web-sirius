@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesos de Trabajo - Sirius Usa LLC</title>
+    <title>Procesos - Sistema Integrado | Sirius Usa LLC</title>
     <style>
-        /* Reutilizar estilos base */
+        /* MISMO ESTILO EXACTO QUE AMAZON Y EBAY */
         html, body {
             margin: 0;
             padding: 0;
@@ -25,9 +25,10 @@
             --secondary-black: #000000;
             --accent-gold: #f59e0b;
             --process-green: #10b981;
-            --process-purple: #8b5cf6;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --success-green: #10b981;
+            --info-blue: #3b82f6;
         }
         
         body {
@@ -37,7 +38,7 @@
             padding-top: 70px;
         }
         
-        /* Navigation */
+        /* Navigation - MISMO QUE AMAZON/EBAY */
         .navbar {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -45,6 +46,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
         
         .nav-container {
@@ -105,18 +107,41 @@
             background: var(--light-bg);
         }
         
-        /* Header Específico para Procesos */
+        /* Header - MISMO ESTILO QUE AMAZON/EBAY */
         .processes-header {
-            background: linear-gradient(135deg, var(--process-green), #059669);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
             padding: 100px 20px 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .processes-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
         
         .processes-header h1 {
             font-size: 3.2em;
             margin-bottom: 20px;
             font-weight: 700;
+            position: relative;
+        }
+        
+        .processes-header p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            line-height: 1.8;
+            opacity: 0.9;
         }
         
         .container {
@@ -144,7 +169,127 @@
             border-radius: 2px;
         }
         
-        /* Process Timeline */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Partnership Model Section - NUEVA (igual que Amazon/eBay) */
+        .partnership-model {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .model-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid;
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .investor-model {
+            border-top-color: var(--success-green);
+        }
+        
+        .supplier-model {
+            border-top-color: var(--info-blue);
+        }
+        
+        .prepcenter-model {
+            border-top-color: var(--accent-gold);
+        }
+        
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .investor-icon {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: white;
+        }
+        
+        .supplier-icon {
+            background: linear-gradient(135deg, var(--info-blue), #1d4ed8);
+            color: white;
+        }
+        
+        .prepcenter-icon {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: white;
+        }
+        
+        .model-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .model-list {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .model-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1em;
+        }
+        
+        .model-list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        /* Process Timeline - MANTENIENDO TU ESTRUCTURA PERO MEJORADA */
         .process-timeline {
             position: relative;
             max-width: 1000px;
@@ -186,6 +331,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
+            border-left: 4px solid var(--process-green);
         }
         
         .step-number {
@@ -193,8 +339,8 @@
             top: -25px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--process-green);
             color: var(--white);
             border-radius: 50%;
@@ -202,7 +348,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.3em;
             box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
         }
         
@@ -231,9 +377,10 @@
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.1em;
         }
         
-        /* Quality Control Section */
+        /* Quality Section - MANTENIENDO PERO MEJORANDO */
         .quality-section {
             background: var(--light-bg);
             padding: 80px 0;
@@ -252,7 +399,12 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            border-top: 4px solid var(--process-purple);
+            border-top: 4px solid var(--process-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .quality-card:hover {
+            transform: translateY(-5px);
         }
         
         .quality-icon {
@@ -266,35 +418,7 @@
             font-size: 1.4em;
         }
         
-        /* Logistics Section */
-        .logistics-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
-            color: var(--white);
-        }
-        
-        .logistics-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .logistics-step {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .logistics-step h4 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: var(--accent-gold);
-        }
-        
-        /* Technology Section */
+        /* Technology Section - MANTENIENDO PERO MEJORANDO */
         .technology-section {
             padding: 80px 0;
             background: var(--white);
@@ -309,12 +433,43 @@
         
         .tech-item {
             padding: 30px 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
         }
         
         .tech-icon {
             font-size: 2.5em;
             margin-bottom: 15px;
             color: var(--process-green);
+        }
+        
+        /* CTA Section - NUEVA (igual que Amazon/eBay) */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section .section-title {
+            color: var(--white);
+        }
+        
+        .cta-section .section-title::after {
+            background: var(--accent-gold);
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.8;
         }
         
         .footer {
@@ -348,15 +503,15 @@
             }
             
             .quality-grid,
-            .logistics-steps,
-            .tech-grid {
+            .tech-grid,
+            .model-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-   <!-- Navigation CORREGIDA -->
+    <!-- Navigation - MISMA ESTRUCTURA QUE AMAZON/EBAY -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -375,187 +530,217 @@
         </div>
     </nav>
 
-    <!-- Processes Header -->
+    <!-- Header - REDISEÑADO CON ENFOQUE DE SOCIOS -->
     <div class="processes-header">
         <div class="container">
-            <h1>Nuestros Procesos</h1>
-            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
-                Flujo de trabajo optimizado y sistemas de control de calidad para garantizar el éxito en cada operación.
-            </p>
+            <h1>Sistema Integrado para Socios</h1>
+            <p>Operamos con <strong>nuestras cuentas verificadas</strong> usando procesos optimizados que garantizan cumplimiento de políticas y maximización de ganancias para todos nuestros socios.</p>
+            <a href="contacto.html" class="cta-button">Conocer el Sistema Completo</a>
         </div>
     </div>
 
-    <!-- Main Process Timeline -->
+    <!-- Partnership Model Section - NUEVA (igual que Amazon/eBay) -->
+    <div class="partnership-model">
+        <div class="container">
+            <h2 class="section-title">Procesos para Cada Tipo de Socio</h2>
+            <div class="model-grid">
+                <div class="model-card investor-model">
+                    <div class="model-icon investor-icon">$</div>
+                    <h3>Para Inversores</h3>
+                    <ul class="model-list">
+                        <li><strong>Transparencia total en cada paso</strong></li>
+                        <li>Reportes detallados de rendimiento</li>
+                        <li>Análisis de ROI por producto</li>
+                        <li>Gestión de riesgo optimizada</li>
+                        <li>Comunicación constante del progreso</li>
+                    </ul>
+                </div>
+                
+                <div class="model-card supplier-model">
+                    <div class="model-icon supplier-icon">📦</div>
+                    <h3>Para Proveedores</h3>
+                    <ul class="model-list">
+                        <li><strong>Integración fluida en nuestra cadena</strong></li>
+                        <li>Procesos de verificación eficientes</li>
+                        <li>Pagos automáticos y puntuales</li>
+                        <li>Feedback constante de mercado</li>
+                        <li>Crecimiento conjunto planificado</li>
+                    </ul>
+                </div>
+                
+                <div class="model-card prepcenter-model">
+                    <div class="model-icon prepcenter-icon">🏭</div>
+                    <h3>Para Prep Centers</h3>
+                    <ul class="model-list">
+                        <li><strong>Flujo de trabajo estandarizado</strong></li>
+                        <li>Comunicación clara y eficiente</li>
+                        <li>Pagos regulares y transparentes</li>
+                        <li>Soporte técnico continuo</li>
+                        <li>Optimización conjunta de procesos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Process Timeline - MEJORADO CON ENFOQUE DE SOCIOS -->
     <div class="container">
-        <h2 class="section-title">Flujo de Trabajo Completo</h2>
+        <h2 class="section-title">Nuestro Flujo de Trabajo Integrado</h2>
         
         <div class="process-timeline">
-            <!-- Step 1 -->
+            <!-- Paso 1-2 -->
             <div class="process-step">
                 <div class="step-content">
                     <div class="step-number">1</div>
-                    <h3>Investigación de Productos</h3>
-                    <p>Identificamos oportunidades de mercado usando herramientas avanzadas de análisis.</p>
+                    <h3>Análisis y Selección Estratégica</h3>
+                    <p>Identificamos oportunidades usando data analysis avanzado. <strong>Los socios pueden proponer productos</strong> para evaluación.</p>
                     <ul class="step-features">
-                        <li>Análisis de tendencias de mercado</li>
+                        <li><strong>Análisis de mercado data-driven</strong></li>
+                        <li>Evaluación de margen y rentabilidad</li>
                         <li>Investigación de competencia</li>
-                        <li>Análisis de margen y rentabilidad</li>
-                        <li>Evaluación de estacionalidad</li>
-                        <li>Identificación de gaps de mercado</li>
+                        <li>Propuestas de socios consideradas</li>
+                        <li>Análisis de riesgo y cumplimiento</li>
                     </ul>
                 </div>
                 <div class="step-content">
                     <div class="step-number">2</div>
-                    <h3>Sourcing y Proveedores</h3>
-                    <p>Conectamos con proveedores confiables y establecemos relaciones estratégicas.</p>
+                    <h3>Gestión de Proveedores Verificados</h3>
+                    <p>Trabajamos con proveedores confiables para garantizar calidad y cumplimiento en <strong>nuestras operaciones</strong>.</p>
                     <ul class="step-features">
-                        <li>Evaluación de proveedores</li>
-                        <li>Negociación de precios</li>
-                        <li>Verificación de calidad inicial</li>
-                        <li>Establecimiento de términos</li>
-                        <li>Gestión de relaciones a largo plazo</li>
+                        <li><strong>Verificación exhaustiva de proveedores</strong></li>
+                        <li>Negociación de mejores condiciones</li>
+                        <li>Control de calidad inicial</li>
+                        <li>Gestión de relaciones estratégicas</li>
+                        <li>Optimización de costos de adquisición</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Step 2 -->
+            <!-- Paso 3-4 -->
             <div class="process-step">
                 <div class="step-content">
                     <div class="step-number">3</div>
-                    <h3>Control de Calidad</h3>
-                    <p>Inspección exhaustiva de productos antes del envío a prep centers.</p>
+                    <h3>Control de Calidad Garantizado</h3>
+                    <p>Inspección exhaustiva para asegurar que todos los productos cumplen con los estándares de <strong>nuestras cuentas</strong>.</p>
                     <ul class="step-features">
-                        <li>Inspección visual detallada</li>
-                        <li>Pruebas funcionales (cuando aplica)</li>
-                        <li>Verificación de especificaciones</li>
-                        <li>Documentación de defectos</li>
-                        <li>Aprobación final de calidad</li>
+                        <li><strong>Inspección 100% de productos</strong></li>
+                        <li>Verificación de compatibilidad con políticas</li>
+                        <li>Pruebas funcionales cuando aplica</li>
+                        <li>Documentación completa de calidad</li>
+                        <li>Rechazo inmediato de productos no conformes</li>
                     </ul>
                 </div>
                 <div class="step-content">
                     <div class="step-number">4</div>
-                    <h3>Prep Center Coordination</h3>
-                    <p>Coordinación estratégica con prep centers para preparación final.</p>
+                    <h3>Coordinación con Prep Centers</h3>
+                    <p>Gestión estratégica con centros de preparación para fulfillment impecable en <strong>nuestras cuentas</strong>.</p>
                     <ul class="step-features">
-                        <li>Re-packaging profesional</li>
-                        <li>Aplicación de etiquetas FNSKU</li>
-                        <li>Preparación para FBA/FBM</li>
-                        <li>Almacenamiento temporal</li>
-                        <li>Gestión de inventario</li>
+                        <li><strong>Re-packaging profesional</strong></li>
+                        <li>Aplicación de etiquetas según políticas</li>
+                        <li>Preparación para FBM/FBA</li>
+                        <li>Gestión de inventario en tiempo real</li>
+                        <li>Comunicación constante con prep centers</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Step 3 -->
+            <!-- Paso 5-6 -->
             <div class="process-step">
                 <div class="step-content">
                     <div class="step-number">5</div>
-                    <h3>Listings y Optimización</h3>
-                    <p>Creación y optimización de listings para maximizar conversiones.</p>
+                    <h3>Publicación y Optimización</h3>
+                    <p>Creación de listings optimizados en <strong>nuestras cuentas verificadas</strong> para maximizar conversiones.</p>
                     <ul class="step-features">
-                        <li>SEO avanzado para marketplaces</li>
-                        <li>Optimización de imágenes</li>
-                        <li>Escritura de copy persuasivo</li>
-                        <li>Investigación de keywords</li>
-                        <li>A/B testing de listings</li>
+                        <li><strong>SEO avanzado para marketplaces</strong></li>
+                        <li>Optimización de imágenes profesionales</li>
+                        <li>Copywriting persuasivo</li>
+                        <li>Gestión estratégica de precios</li>
+                        <li>A/B testing continuo</li>
                     </ul>
                 </div>
                 <div class="step-content">
                     <div class="step-number">6</div>
-                    <h3>Fulfillment y Envíos</h3>
-                    <p>Gestión eficiente de envíos según el modelo (FBM o FBA).</p>
+                    <h3>Fulfillment y Distribución</h3>
+                    <p>Gestión completa de envíos y <strong>distribución transparente de ganancias</strong> entre socios.</p>
                     <ul class="step-features">
-                        <li>Gestión de órdenes en tiempo real</li>
+                        <li><strong>Gestión automática de órdenes</strong></li>
                         <li>Optimización de costos de envío</li>
                         <li>Seguimiento automatizado</li>
-                        <li>Gestión de devoluciones</li>
-                        <li>Soporte al cliente</li>
+                        <li>Soporte post-venta especializado</li>
+                        <li>Reportes transparentes de revenue share</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Quality Control Section -->
+    <!-- Quality Section - MEJORADA CON ENFOQUE DE SOCIOS -->
     <div class="quality-section">
         <div class="container">
-            <h2 class="section-title">Control de Calidad</h2>
+            <h2 class="section-title">Garantía de Calidad para Socios</h2>
             <div class="quality-grid">
                 <div class="quality-card">
                     <div class="quality-icon">🔍</div>
-                    <h3>Inspección Visual</h3>
-                    <p>Revisión minuciosa de cada producto para detectar defectos de fabricación, daños o inconsistencias.</p>
+                    <h3>Inspección 100%</h3>
+                    <p>Cada producto pasa por revisión minuciosa antes de entrar a <strong>nuestras cuentas</strong>, protegiendo la inversión de socios.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">⚡</div>
-                    <h3>Pruebas Funcionales</h3>
-                    <p>Verificación del funcionamiento correcto de productos electrónicos y dispositivos.</p>
+                    <h3>Procesos Estandarizados</h3>
+                    <p>Métodos consistentes que garantizan cumplimiento y minimizan riesgos para todos los involucrados.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">📋</div>
-                    <h3>Documentación</h3>
-                    <p>Registro detallado de cada inspección para trazabilidad y mejora continua.</p>
+                    <h3>Documentación Completa</h3>
+                    <p>Trazabilidad total de cada operación para <strong>transparencia con socios</strong> y mejora continua.</p>
                 </div>
                 <div class="quality-card">
                     <div class="quality-icon">🔄</div>
                     <h3>Mejora Continua</h3>
-                    <p>Análisis de datos de calidad para identificar tendencias y áreas de mejora.</p>
+                    <p>Análisis constante de datos para optimizar procesos y <strong>maximizar ganancias compartidas</strong>.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Logistics Section -->
-    <div class="logistics-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Logística y Cadena de Suministro</h2>
-            <div class="logistics-steps">
-                <div class="logistics-step">
-                    <h4>Proveedores → Prep Center</h4>
-                    <p>Envío directo desde proveedores a nuestros prep centers partners para inspección</p>
-                </div>
-                <div class="logistics-step">
-                    <h4>Prep Center → Amazon FBA</h4>
-                    <p>Preparación y envío a warehouses de Amazon para productos FBA</p>
-                </div>
-                <div class="logistics-step">
-                    <h4>Prep Center → Cliente Final</h4>
-                    <p>Envío directo al cliente para órdenes FBM con tracking automatizado</p>
-                </div>
-                <div class="logistics-step">
-                    <h4>Gestión de Devoluciones</h4>
-                    <p>Proceso eficiente para manejo de returns y re-stocking</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Technology Section -->
+    <!-- Technology Section - MEJORADA CON ENFOQUE DE SOCIOS -->
     <div class="technology-section">
         <div class="container">
-            <h2 class="section-title">Tecnología y Automatización</h2>
+            <h2 class="section-title">Tecnología para Eficiencia y Transparencia</h2>
             <div class="tech-grid">
                 <div class="tech-item">
                     <div class="tech-icon">🤖</div>
                     <h4>Automatización</h4>
-                    <p>Procesos automatizados para eficiencia</p>
+                    <p>Procesos automatizados que garantizan eficiencia y <strong>minimizan errores</strong></p>
                 </div>
                 <div class="tech-item">
                     <div class="tech-icon">📊</div>
-                    <h4>Analytics</h4>
-                    <p>Análisis de datos en tiempo real</p>
+                    <h4>Analytics Avanzado</h4>
+                    <p>Análisis de datos en tiempo real para <strong>decisiones informadas</strong></p>
                 </div>
                 <div class="tech-item">
                     <div class="tech-icon">🔗</div>
                     <h4>Integraciones API</h4>
-                    <p>Conexión con múltiples plataformas</p>
+                    <p>Conexión fluida entre proveedores, prep centers y <strong>nuestras cuentas</strong></p>
                 </div>
                 <div class="tech-item">
                     <div class="tech-icon">📈</div>
-                    <h4>Reportes Automatizados</h4>
-                    <p>Métricas y KPIs automáticos</p>
+                    <h4>Reportes Automáticos</h4>
+                    <p>Métricas transparentes para <strong>todos nuestros socios</strong></p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- CTA Section - NUEVA (igual que Amazon/eBay) -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="section-title">¿Listo para Unirse a Nuestro Sistema?</h2>
+            <p>
+                Únase a nuestro sistema probado de procesos integrados. Garantizamos transparencia, 
+                cumplimiento y maximización de ganancias para todos nuestros socios estratégicos.
+            </p>
+            <a href="contacto.html" class="cta-button">Iniciar Colaboración</a>
         </div>
     </div>
 
@@ -563,7 +748,7 @@
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p>Procesos Optimizados & Control de Calidad</p>
+            <p><strong>Sistema Integrado para Socios Estratégicos</strong></p>
             <div style="margin-top: 20px; opacity: 0.8;">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
@@ -574,6 +759,9 @@
         // Animación para los steps del timeline
         document.addEventListener('DOMContentLoaded', function() {
             const steps = document.querySelectorAll('.step-content');
+            const models = document.querySelectorAll('.model-card');
+            const qualityCards = document.querySelectorAll('.quality-card');
+            const techItems = document.querySelectorAll('.tech-item');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -584,11 +772,12 @@
                 });
             }, { threshold: 0.1 });
             
-            steps.forEach(step => {
-                step.style.opacity = '0';
-                step.style.transform = 'translateY(30px)';
-                step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(step);
+            // Aplicar animación a todos los elementos
+            [...steps, ...models, ...qualityCards, ...techItems].forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
             });
         });
     </script>
