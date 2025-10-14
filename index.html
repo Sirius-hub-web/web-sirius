@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirius Usa LLC - Socio Estratégico en Dropshipping</title>
+    <title>Nosotros - Sirius Usa LLC</title>
     <style>
-        /* Reset y configuración para Google Apps Script */
+        /* Reset y configuración IDÉNTICA al index */
         html, body {
             margin: 0;
             padding: 0;
@@ -39,7 +39,7 @@
             padding-top: 70px;
         }
         
-        /* Navigation Mejorada */
+        /* Navigation IDÉNTICA al index */
         .navbar {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -67,6 +67,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
         
         .logo-icon {
@@ -102,7 +103,7 @@
             background: var(--light-bg);
         }
         
-        /* Header Hero Mejorado */
+        /* Header Hero IDÉNTICO al index */
         .header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
@@ -159,13 +160,8 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
-        
-        /* Platforms Section Mejorada */
-        .platforms {
-            padding: 100px 0;
-            background: var(--white);
-        }
-        
+
+        /* Container IDÉNTICO al index */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -190,14 +186,20 @@
             margin: 20px auto 0;
             border-radius: 2px;
         }
+
+        /* Mission Vision Grid - ESTILO COHERENTE CON INDEX */
+        .mission-vision {
+            padding: 100px 0;
+            background: var(--white);
+        }
         
-        .platform-grid {
+        .mission-vision-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 50px;
         }
         
-        .platform-card {
+        .mission-card, .vision-card {
             background: var(--white);
             padding: 50px 40px;
             border-radius: 15px;
@@ -209,7 +211,7 @@
             overflow: hidden;
         }
         
-        .platform-card::before {
+        .mission-card::before, .vision-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -218,20 +220,20 @@
             height: 4px;
         }
         
-        .amazon-card::before {
-            background: var(--amazon-orange);
+        .mission-card::before {
+            background: var(--success-green);
         }
         
-        .ebay-card::before {
-            background: var(--ebay-multicolor);
+        .vision-card::before {
+            background: var(--info-blue);
         }
         
-        .platform-card:hover {
+        .mission-card:hover, .vision-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
         
-        .platform-icon {
+        .mission-icon, .vision-icon {
             margin-bottom: 30px;
             transition: transform 0.3s;
             display: flex;
@@ -240,61 +242,44 @@
             height: 80px;
         }
         
-        .platform-card:hover .platform-icon {
+        .mission-card:hover .mission-icon, .vision-card:hover .vision-icon {
             transform: scale(1.1);
         }
         
-        .logo-img {
+        .icon-img {
             height: 60px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
         }
         
-        .platform-card h3 {
+        .mission-card h2, .vision-card h2 {
             color: var(--primary-blue);
             margin-bottom: 25px;
             font-size: 1.6em;
             font-weight: 700;
         }
         
-        .service-list {
-            list-style: none;
-            text-align: left;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .service-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
+        .mission-card p, .vision-card p {
+            color: #666;
+            line-height: 1.7;
             font-size: 1.05em;
         }
-        
-        .service-list li:before {
-            content: "✓";
-            color: var(--accent-gold);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        
-        /* Opportunities Section - NUEVA con estilos originales */
-        .opportunities {
+
+        /* Values Section - ESTILO COHERENTE CON OPPORTUNITIES DEL INDEX */
+        .values {
             padding: 100px 0;
             background: var(--light-bg);
         }
         
-        .opportunity-grid {
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
         
-        .opportunity-card {
+        .value-card {
             background: var(--white);
             padding: 40px 30px;
             border-radius: 15px;
@@ -305,24 +290,28 @@
             position: relative;
         }
         
-        .opportunity-card:hover {
+        .value-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
         
-        .investor-card {
+        .accounts-card {
             border-top-color: var(--success-green);
         }
         
-        .supplier-card {
+        .revenue-card {
             border-top-color: var(--info-blue);
         }
         
-        .prepcenter-card {
+        .partnership-card {
             border-top-color: var(--accent-gold);
         }
         
-        .opportunity-icon {
+        .compliance-card {
+            border-top-color: var(--primary-blue);
+        }
+        
+        .value-icon {
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -335,43 +324,48 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .investor-icon {
+        .accounts-icon {
             background: linear-gradient(135deg, var(--success-green), #047857);
             color: white;
         }
         
-        .supplier-icon {
+        .revenue-icon {
             background: linear-gradient(135deg, var(--info-blue), #1d4ed8);
             color: white;
         }
         
-        .prepcenter-icon {
+        .partnership-icon {
             background: linear-gradient(135deg, var(--accent-gold), #d97706);
             color: white;
         }
         
-        .opportunity-card h3 {
+        .compliance-icon {
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            color: white;
+        }
+        
+        .value-card h3 {
             color: var(--primary-blue);
             margin-bottom: 20px;
             font-size: 1.4em;
             font-weight: 700;
         }
         
-        .opportunity-list {
+        .value-list {
             list-style: none;
             text-align: left;
             margin: 0;
             padding: 0;
         }
         
-        .opportunity-list li {
+        .value-list li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
             font-size: 1em;
         }
         
-        .opportunity-list li:before {
+        .value-list li:before {
             content: "•";
             color: var(--accent-gold);
             position: absolute;
@@ -379,8 +373,94 @@
             font-weight: bold;
             font-size: 1.5em;
         }
+
+        /* Team Section - ESTILO COHERENTE CON PLATFORMS DEL INDEX */
+        .team {
+            padding: 100px 0;
+            background: var(--white);
+        }
         
-        /* Stats Section Mejorada */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+        }
+        
+        .team-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e5e9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .team-photo {
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .team-card:hover .team-photo {
+            transform: scale(1.1);
+        }
+        
+        .photo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        }
+        
+        .team-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+        
+        .team-role {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .team-bio {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section IDÉNTICA al index */
         .stats {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-blue), #1e40af);
@@ -423,59 +503,8 @@
             opacity: 0.9;
             font-weight: 600;
         }
-        
-        /* Process Section Mejorada */
-        .process {
-            padding: 100px 0;
-            background: var(--white);
-        }
-        
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            position: relative;
-        }
-        
-        .process-step {
-            text-align: center;
-            padding: 40px 30px;
-            background: var(--light-bg);
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            position: relative;
-            border-left: 4px solid var(--primary-blue);
-        }
-        
-        .process-step:hover {
-            transform: translateY(-5px);
-        }
-        
-        .step-number {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-gold));
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-weight: bold;
-            font-size: 1.3em;
-            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
-        }
-        
-        .process-step h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            font-weight: 700;
-        }
-        
-        /* Contact Preview Mejorado */
+
+        /* Contact Preview IDÉNTICO al index */
         .contact-preview {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
@@ -519,7 +548,7 @@
             font-size: 1.1em;
         }
         
-        /* Responsive Design */
+        /* Responsive Design IDÉNTICO al index */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -529,7 +558,7 @@
                 font-size: 2.2em;
             }
             
-            .platform-grid, .opportunity-grid {
+            .mission-vision-grid, .values-grid, .team-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -538,22 +567,13 @@
                 font-size: 2.2em;
             }
             
-            .platform-card, .opportunity-card {
+            .mission-card, .vision-card, .value-card, .team-card {
                 padding: 30px 25px;
-            }
-            
-            .logo-img {
-                height: 50px;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
-            }
-            
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 25px;
             }
         }
         
@@ -573,18 +593,14 @@
             .stat-item h3 {
                 font-size: 2.5em;
             }
-            
-            .logo-img {
-                height: 45px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation IDÉNTICA al index -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+            <a href="index.html" class="logo">
                 <div class="logo-icon">S</div>
                 Sirius Usa LLC
             </a>
@@ -595,176 +611,174 @@
                 <li><a href="procesos.html">Procesos</a></li>
                 <li><a href="prepcenters.html">Prep Centers</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="nosotros.html" class="active">Nosotros</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header Hero - REDISEÑADO PARA SOCIOS -->
-    <div class="header" id="home">
+    <!-- Header Hero IDÉNTICO al index -->
+    <div class="header">
         <div class="container">
-            <h1>Socios Estratégicos en Dropshipping</h1>
-            <p>Buscamos <strong>inversores, proveedores y prep centers</strong> para asociaciones de crecimiento mutuo. Operamos con <strong>nuestras cuentas verificadas</strong> de Amazon y eBay - tú participas en las ganancias sin riesgos de suspensiones.</p>
-            <a href="contacto.html" class="cta-button">Explorar Oportunidades de Asociación</a>
+            <h1>El Equipo detrás de Sirius USA LLC</h1>
+            <p>Operamos con <strong>nuestras cuentas verificadas</strong> de Amazon y eBay. Buscamos <strong>socios estratégicos</strong> - no clientes. Tú participas en las ganancias sin riesgos de suspensiones.</p>
+            <a href="contacto.html" class="cta-button">Iniciar Partnership</a>
         </div>
     </div>
 
-    <!-- Platforms Section - AJUSTADA -->
-    <div class="platforms">
+    <!-- Misión y Visión - ESTILO COHERENTE -->
+    <div class="mission-vision">
         <div class="container">
-            <h2 class="section-title">Operamos con Nuestras Cuentas Verificadas</h2>
-            <div class="platform-grid">
-                <!-- Amazon Card - AJUSTADO -->
-                <div class="platform-card amazon-card" id="amazon">
-                    <div class="platform-icon">
-                        <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" onerror="this.style.display='none'">
+            <h2 class="section-title">Nuestra Filosofía</h2>
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <div class="photo-img">🎯</div>
                     </div>
-                    <h3>Amazon FBM - Cuentas Propias</h3>
-                    <ul class="service-list">
-                        <li><strong>Operamos con nuestras cuentas Amazon verificadas</strong></li>
-                        <li>Especialización en FBM (Fulfillment by Merchant)</li>
-                        <li>Cumplimiento garantizado de políticas Amazon</li>
-                        <li>Análisis de márgenes y selección de productos</li>
-                        <li>Coordinación estratégica con prep centers</li>
-                        <li>Participación en ganancias por ventas</li>
+                    <h2>Nuestra Misión</h2>
+                    <p>Crecer junto a <strong>socios estratégicos</strong> a través de un modelo transparente de revenue sharing. Operamos con <strong>nuestras cuentas verificadas</strong> de Amazon y eBay para minimizar riesgos y maximizar oportunidades de crecimiento mutuo.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <div class="photo-img">🚀</div>
+                    </div>
+                    <h2>Nuestra Visión</h2>
+                    <p>Ser la red de partnerships más confiable en e-commerce, donde <strong>inversores, proveedores y prep centers</strong> encuentran oportunidades reales de crecimiento a través de un modelo colaborativo y transparente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Valores - ESTILO COHERENTE CON OPPORTUNITIES -->
+    <div class="values">
+        <div class="container">
+            <h2 class="section-title">Los 4 Pilares de Nuestro Modelo</h2>
+            <div class="values-grid">
+                <div class="value-card accounts-card">
+                    <div class="value-icon accounts-icon">🔒</div>
+                    <h3>Cuentas 100% Propias</h3>
+                    <ul class="value-list">
+                        <li><strong>Cero gestión de cuentas de terceros</strong></li>
+                        <li>Operamos con nuestras cuentas verificadas</li>
+                        <li>Eliminamos riesgos de suspensiones</li>
+                        <li>Cumplimiento total de políticas</li>
                     </ul>
                 </div>
                 
-                <!-- eBay Card - AJUSTADO -->
-                <div class="platform-card ebay-card" id="ebay">
-                    <div class="platform-icon">
-                        <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" alt="eBay Logo" onerror="this.style.display='none'">
-                    </div>
-                    <h3>eBay - Sistema Multi-Cuenta</h3>
-                    <ul class="service-list">
-                        <li><strong>Gestionamos cuentas eBay propias y verificadas</strong></li>
-                        <li>Soluciones de envío nacional e internacional</li>
-                        <li>Cumplimiento estricto de normativas eBay</li>
-                        <li>Gestión profesional de reputación</li>
-                        <li>Optimización SEO avanzada para listings</li>
-                        <li>Modelo de revenue share transparente</li>
+                <div class="value-card revenue-card">
+                    <div class="value-icon revenue-icon">💰</div>
+                    <h3>Revenue Sharing Real</h3>
+                    <ul class="value-list">
+                        <li><strong>Modelo 100% basado en ganancias</strong></li>
+                        <li>Tú ganas cuando nosotros ganamos</li>
+                        <li>Reportes completamente transparentes</li>
+                        <li>Pagos puntuales y claros</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card partnership-card">
+                    <div class="value-icon partnership-icon">🤝</div>
+                    <h3>Partnerships Estratégicos</h3>
+                    <ul class="value-list">
+                        <li><strong>No buscamos clientes</strong></li>
+                        <li>Relaciones de largo plazo</li>
+                        <li>Crecimiento conjunto</li>
+                        <li>Comunicación directa y transparente</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card compliance-card">
+                    <div class="value-icon compliance-icon">🛡️</div>
+                    <h3>Cumplimiento Total</h3>
+                    <ul class="value-list">
+                        <li><strong>Garantía de políticas cumplidas</strong></li>
+                        <li>Procesos auditados</li>
+                        <li>Tu inversión protegida</li>
+                        <li>Operaciones legales y seguras</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Opportunities Section - NUEVA SECCIÓN -->
-    <div class="opportunities" id="opportunities">
+    <!-- Team - ESTILO COHERENTE CON PLATFORMS -->
+    <div class="team">
         <div class="container">
-            <h2 class="section-title">Oportunidades de Asociación</h2>
-            <div class="opportunity-grid">
-                <!-- Para Inversores -->
-                <div class="opportunity-card investor-card">
-                    <div class="opportunity-icon investor-icon">$</div>
-                    <h3>Para Inversores</h3>
-                    <ul class="opportunity-list">
-                        <li><strong>Capital para escalar operaciones</strong></li>
-                        <li>Retorno basado en porcentaje de ventas</li>
-                        <li>Mínimo riesgo - cuentas propias verificadas</li>
-                        <li>Reportes transparentes de rendimiento</li>
-                        <li>Diversificación de inversión en ecommerce</li>
-                    </ul>
+            <h2 class="section-title">El Equipo que Opera Nuestras Cuentas</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <div class="photo-img">👑</div>
+                    </div>
+                    <h3>Andres E. Ventura</h3>
+                    <p class="team-role">CEO & Fundador</p>
+                    <p class="team-bio">Especialista en e-commerce con más de 5 años operando <strong>cuentas propias</strong> en Amazon FBM y eBay multi-cuenta. Creador del modelo de revenue sharing que beneficia a todos los socios.</p>
+                    <p><strong>Filosofía:</strong> "Crecemos juntos o no crecemos"</p>
                 </div>
                 
-                <!-- Para Proveedores -->
-                <div class="opportunity-card supplier-card">
-                    <div class="opportunity-icon supplier-icon">📦</div>
-                    <h3>Para Proveedores</h3>
-                    <ul class="opportunity-list">
-                        <li><strong>Venda más a través de nuestras cuentas</strong></li>
-                        <li>Sin preocuparse por gestión de marketplaces</li>
-                        <li>Pago garantizado y oportuno</li>
-                        <li>Ampliación de canal de ventas</li>
-                        <li>Productos expuestos a millones de compradores</li>
-                    </ul>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <div class="photo-img">⚡</div>
+                    </div>
+                    <h3>Equipo de Operaciones</h3>
+                    <p class="team-role">Gestión de Nuestras Cuentas</p>
+                    <p class="team-bio">Expertos en listing optimization, PPC estratégico y cumplimiento de políticas. Gestionan <strong>nuestras cuentas verificadas</strong> con máxima eficiencia y transparencia.</p>
+                    <p><strong>Métrica clave:</strong> 0 suspensiones de cuentas</p>
                 </div>
                 
-                <!-- Para Prep Centers -->
-                <div class="opportunity-card prepcenter-card">
-                    <div class="opportunity-icon prepcenter-icon">🏭</div>
-                    <h3>Para Prep Centers</h3>
-                    <ul class="opportunity-list">
-                        <li><strong>Volumen constante de trabajo</strong></li>
-                        <li>Productos pre-verificados y compatibles</li>
-                        <li>Cumplimiento garantizado de políticas</li>
-                        <li>Comunicación eficiente y pagos regulares</li>
-                        <li>Posibilidad de crecimiento conjunto</li>
-                    </ul>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <div class="photo-img">🌟</div>
+                    </div>
+                    <h3>Equipo de Partnerships</h3>
+                    <p class="team-role">Relación con Socios</p>
+                    <p class="team-bio">Dedicados a crear y mantener relaciones de largo plazo con inversores, proveedores y prep centers. Tu punto de contacto para crecimiento conjunto.</p>
+                    <p><strong>Compromiso:</strong> Transparencia total en reportes</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Stats Section - MANTENIDO -->
+    <!-- Stats Section IDÉNTICA al index -->
     <div class="stats">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Productos Analizados</p>
-                </div>
-                <div class="stat-item">
-                    <h3>2+</h3>
-                    <p>Años de Experiencia</p>
+                    <h3>5+</h3>
+                    <p>Años con Cuentas Propias</p>
                 </div>
                 <div class="stat-item">
                     <h3>100%</h3>
-                    <p>Políticas Cumplidas</p>
+                    <p>Cuentas Verificadas</p>
                 </div>
                 <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Monitoreo Operativo</p>
+                    <h3>0</h3>
+                    <p>Suspensiones</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Revenue Share</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Process Section - AJUSTADA -->
-    <div class="process" id="process">
+    <!-- Contact Preview IDÉNTICO al index -->
+    <div class="contact-preview">
         <div class="container">
-            <h2 class="section-title">Nuestro Modelo de Trabajo</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Análisis y Selección</h3>
-                    <p>Identificamos productos rentables usando análisis de datos. <strong>Tú puedes proponer productos o categorías.</strong></p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Publicación en Nuestras Cuentas</h3>
-                    <p>Listamos en <strong>nuestras cuentas verificadas</strong> de Amazon y eBay con optimización SEO y pricing estratégico.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Gestión de Cadena de Suministro</h3>
-                    <p>Coordinamos proveedores globales y <strong>prep centers estratégicos</strong> para fulfillment eficiente.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Distribución de Ganancias</h3>
-                    <p><strong>Compartimos utilidades transparentemente</strong> basado en un modelo de revenue share preestablecido.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Preview - AJUSTADO -->
-    <div class="contact-preview" id="contact">
-        <div class="container">
-            <h2 class="section-title">¿Interesado en Ser Nuestro Socio?</h2>
+            <h2 class="section-title">¿Listo para Ser Nuestro Socio?</h2>
             <p>
-                Contáctanos para explorar oportunidades de asociación. Te explicaremos nuestro modelo de revenue share, mostraremos casos de éxito y cómo podemos crecer juntos en el mundo del dropshipping profesional.
+                Contáctanos para explorar oportunidades de partnership. Te explicaremos nuestro modelo de revenue share y cómo podemos crecer juntos en el mundo del e-commerce profesional.
             </p>
             <a href="contacto.html" class="cta-button">Iniciar Conversación Estratégica</a>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer IDÉNTICO al index -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p><strong>Socios Estratégicos en Dropshipping Profesional</strong></p>
+            <p><strong>Operamos con nuestras cuentas - tú participas en las ganancias</strong></p>
             <div class="contact-info">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
@@ -772,7 +786,7 @@
     </div>
 
     <script>
-        // Smooth scrolling para navegación
+        // Smooth scrolling IDÉNTICO al index
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -786,7 +800,7 @@
             });
         });
 
-        // Efecto de aparición al hacer scroll
+        // Efecto de aparición al hacer scroll IDÉNTICO al index
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -801,24 +815,12 @@
             });
         }, observerOptions);
 
-        // Observar elementos para animación
-        document.querySelectorAll('.platform-card, .process-step, .opportunity-card, .stat-item').forEach(el => {
+        // Observar elementos para animación IDÉNTICO al index
+        document.querySelectorAll('.mission-card, .vision-card, .value-card, .team-card, .stat-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
-        });
-
-        // Fallback para logos si no cargan
-        document.addEventListener('DOMContentLoaded', function() {
-            const logos = document.querySelectorAll('.logo-img');
-            logos.forEach(logo => {
-                logo.addEventListener('error', function() {
-                    const platformCard = this.closest('.platform-card');
-                    const platformName = platformCard.classList.contains('amazon-card') ? 'AMAZON' : 'EBAY';
-                    this.outerHTML = `<div style="font-size: 2em; font-weight: bold; color: ${platformCard.classList.contains('amazon-card') ? '#ff9900' : '#0064d2'}">${platformName}</div>`;
-                });
-            });
         });
     </script>
 </body>
