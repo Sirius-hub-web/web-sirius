@@ -836,7 +836,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                 
                 console.log('📤 Enviando datos a Google Sheets:', formData);
                 
-                // Enviar a Google Apps Script
+                // Enviar SOLO a Google Apps Script - NO EMAIL
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     headers: {
