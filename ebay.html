@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios eBay - Sirius Usa LLC</title>
+    <title>eBay - Socio Estratégico | Sirius Usa LLC</title>
     <style>
         /* Reutilizar estilos base */
         html, body {
@@ -30,6 +30,8 @@
             --ebay-yellow: #f5af02;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --success-green: #10b981;
+            --info-blue: #3b82f6;
         }
         
         body {
@@ -47,6 +49,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
         
         .nav-container {
@@ -107,9 +110,9 @@
             background: var(--light-bg);
         }
         
-        /* Header Específico para eBay */
+        /* Header Específico para eBay - REDISEÑADO */
         .ebay-header {
-            background: linear-gradient(135deg, var(--ebay-blue), #1e40af);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
             padding: 100px 20px 80px;
             text-align: center;
@@ -124,11 +127,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(229, 50, 56, 0.1) 0%, 
-                rgba(0, 100, 210, 0.1) 25%, 
-                rgba(245, 175, 2, 0.1) 50%, 
-                rgba(134, 184, 23, 0.1) 75%);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
         
         .ebay-header h1 {
@@ -136,6 +136,15 @@
             margin-bottom: 20px;
             font-weight: 700;
             position: relative;
+        }
+        
+        .ebay-header p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            line-height: 1.8;
+            opacity: 0.9;
         }
         
         .container {
@@ -163,7 +172,127 @@
             border-radius: 2px;
         }
         
-        /* Service Tabs para eBay */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Partnership Model Section - NUEVA */
+        .partnership-model {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .model-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid;
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .investor-model {
+            border-top-color: var(--success-green);
+        }
+        
+        .supplier-model {
+            border-top-color: var(--info-blue);
+        }
+        
+        .prepcenter-model {
+            border-top-color: var(--accent-gold);
+        }
+        
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .investor-icon {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: white;
+        }
+        
+        .supplier-icon {
+            background: linear-gradient(135deg, var(--info-blue), #1d4ed8);
+            color: white;
+        }
+        
+        .prepcenter-icon {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: white;
+        }
+        
+        .model-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .model-list {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .model-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1em;
+        }
+        
+        .model-list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        /* Service Tabs para eBay - AJUSTADAS */
         .service-tabs {
             display: flex;
             justify-content: center;
@@ -276,7 +405,7 @@
             font-size: 1.1em;
         }
         
-        /* eBay Features Section */
+        /* eBay Features Section - AJUSTADA */
         .ebay-features {
             background: var(--light-bg);
             padding: 80px 0;
@@ -308,7 +437,7 @@
             font-size: 1.3em;
         }
         
-        /* International Section */
+        /* International Section - AJUSTADA */
         .international {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--ebay-blue), #1e40af);
@@ -328,6 +457,74 @@
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
             backdrop-filter: blur(10px);
+        }
+        
+        /* Process Flow Section - NUEVA */
+        .process-flow {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .flow-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .flow-step-number {
+            background: var(--ebay-blue);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .flow-step h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* CTA Section - NUEVA */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section .section-title {
+            color: var(--white);
+        }
+        
+        .cta-section .section-title::after {
+            background: var(--accent-gold);
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.8;
         }
         
         .footer {
@@ -361,6 +558,14 @@
             .countries-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -371,8 +576,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation CORREGIDA -->
-    <!-- Navigation CORREGIDA -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -391,111 +595,117 @@
         </div>
     </nav>
 
-    <!-- eBay Header -->
+    <!-- eBay Header - REDISEÑADO -->
     <div class="ebay-header">
         <div class="container">
-            <h1>Servicios eBay</h1>
-            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9; position: relative;">
-                Soluciones completas de dropshipping, wholesale y ventas internacionales en la plataforma global de eBay.
-            </p>
+            <h1>Socio Estratégico en eBay</h1>
+            <p>Operamos con <strong>nuestras cuentas eBay verificadas</strong>. Tú participas en las ganancias sin riesgos de suspensiones. Sistema multi-cuenta especializado en ventas nacionales e internacionales.</p>
+            <a href="contacto.html" class="cta-button">Explorar Asociación en eBay</a>
         </div>
     </div>
 
-    <!-- Service Tabs -->
+    <!-- Partnership Model Section - NUEVA SECCIÓN -->
+    <div class="partnership-model">
+        <div class="container">
+            <h2 class="section-title">Modelo de Asociación en eBay</h2>
+            <div class="model-grid">
+                <!-- Para Inversores -->
+                <div class="model-card investor-model">
+                    <div class="model-icon investor-icon">$</div>
+                    <h3>Para Inversores</h3>
+                    <ul class="model-list">
+                        <li><strong>Capital para escalar en eBay multi-cuenta</strong></li>
+                        <li>Retorno basado en porcentaje de ventas</li>
+                        <li>Mínimo riesgo - cuentas propias verificadas</li>
+                        <li>Reportes transparentes de rendimiento</li>
+                        <li>Diversificación en marketplace global</li>
+                    </ul>
+                </div>
+                
+                <!-- Para Proveedores -->
+                <div class="model-card supplier-model">
+                    <div class="model-icon supplier-icon">📦</div>
+                    <h3>Para Proveedores</h3>
+                    <ul class="model-list">
+                        <li><strong>Venda más a través de nuestras cuentas eBay</strong></li>
+                        <li>Sin preocuparse por gestión de marketplace</li>
+                        <li>Pago garantizado y oportuno</li>
+                        <li>Ampliación de canal de ventas internacional</li>
+                        <li>Productos expuestos a compradores globales</li>
+                    </ul>
+                </div>
+                
+                <!-- Para Prep Centers -->
+                <div class="model-card prepcenter-model">
+                    <div class="model-icon prepcenter-icon">🏭</div>
+                    <h3>Para Prep Centers</h3>
+                    <ul class="model-list">
+                        <li><strong>Volumen constante de trabajo eBay</strong></li>
+                        <li>Productos pre-verificados y compatibles</li>
+                        <li>Cumplimiento garantizado de políticas eBay</li>
+                        <li>Comunicación eficiente y pagos regulares</li>
+                        <li>Envíos nacionales e internacionales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Tabs - AJUSTADAS -->
     <div class="container" style="padding: 80px 20px;">
         <div class="service-tabs">
-            <button class="tab-button active" onclick="openTab('dropshipping')">eBay Dropshipping</button>
-            <button class="tab-button" onclick="openTab('wholesale')">eBay Wholesale</button>
-            <button class="tab-button" onclick="openTab('international')">Ventas Internacionales</button>
+            <button class="tab-button active" onclick="openTab('modelo')">Modelo Multi-Cuenta</button>
+            <button class="tab-button" onclick="openTab('internacional')">Ventas Internacionales</button>
+            <button class="tab-button" onclick="openTab('cumplimiento')">Cumplimiento eBay</button>
         </div>
 
-        <!-- Dropshipping Tab -->
-        <div id="dropshipping" class="tab-content active">
-            <h2 class="section-title">eBay Dropshipping</h2>
+        <!-- Modelo Multi-Cuenta Tab - AJUSTADA -->
+        <div id="modelo" class="tab-content active">
+            <h2 class="section-title">Operamos con Nuestras Cuentas eBay</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <h3>Dropshipping Automatizado</h3>
-                    <p>Sistema completo de dropshipping con proveedores confiables y procesos automatizados.</p>
+                    <h3>Sistema Multi-Cuenta Propio</h3>
+                    <p>Gestionamos <strong>nuestras cuentas eBay verificadas</strong> con estrategias escalables.</p>
                     <ul class="feature-list">
-                        <li>Integración con múltiples proveedores</li>
-                        <li>Procesamiento automático de órdenes</li>
-                        <li>Sincronización de inventario en tiempo real</li>
-                        <li>Gestión de tracking automático</li>
-                        <li>Optimización de márgenes</li>
+                        <li><strong>Operamos con cuentas propias verificadas</strong></li>
+                        <li>Gestión estratégica multi-cuenta</li>
+                        <li>Optimización de listings para conversión</li>
+                        <li>Gestión de reputación y feedback</li>
+                        <li>Análisis de competencia y precios</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Gestión de Listings</h3>
-                    <p>Creación y optimización profesional de listings para maximizar conversiones.</p>
+                    <h3>Coordinación con Prep Centers</h3>
+                    <p>Gestión estratégica con centros de preparación para fulfillment eficiente.</p>
                     <ul class="feature-list">
-                        <li>Creación masiva de listings</li>
-                        <li>SEO optimizado para eBay</li>
-                        <li>Plantillas profesionales</li>
-                        <li>Gestión de variaciones</li>
-                        <li>Optimización de precios dinámica</li>
+                        <li>Inspección de calidad exhaustiva</li>
+                        <li>Re-packaging según políticas eBay</li>
+                        <li>Gestión de etiquetado y códigos</li>
+                        <li>Almacenamiento temporal estratégico</li>
+                        <li>Envío directo al cliente final</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Account Management</h3>
-                    <p>Gestión profesional de cuentas eBay manteniendo métricas óptimas.</p>
+                    <h3>Gestión de Cadena de Suministro</h3>
+                    <p>Conexión con distribuidores confiables y verificación de productos.</p>
                     <ul class="feature-list">
-                        <li>Mantenimiento de Top Rated Seller</li>
-                        <li>Gestión de feedback y reviews</li>
-                        <li>Resolución de casos y disputas</li>
-                        <li>Optimización de seller standards</li>
-                        <li>Protección contra suspensiones</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Wholesale Tab -->
-        <div id="wholesale" class="tab-content">
-            <h2 class="section-title">eBay Wholesale</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Sourcing Mayorista</h3>
-                    <p>Identificación y relación con proveedores mayoristas para eBay.</p>
-                    <ul class="feature-list">
-                        <li>Negociación de precios mayoristas</li>
-                        <li>Acceso a productos exclusivos</li>
+                        <li>Acceso a proveedores verificados</li>
+                        <li>Negociación de mejores precios</li>
                         <li>Verificación de autenticidad</li>
-                        <li>Gestión de relaciones con proveedores</li>
-                        <li>Análisis de rentabilidad</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Inventory Management</h3>
-                    <p>Gestión profesional de inventario para ventas wholesale en eBay.</p>
-                    <ul class="feature-list">
-                        <li>Control de stock en tiempo real</li>
-                        <li>Predicción de demanda</li>
-                        <li>Optimización de reordenes</li>
-                        <li>Gestión de múltiples ubicaciones</li>
-                        <li>Reportes de inventario</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Brand Management</h3>
-                    <p>Gestión de marcas y productos en el marketplace de eBay.</p>
-                    <ul class="feature-list">
-                        <li>Autorizaciones de marca</li>
-                        <li>Protección contra counterfeit</li>
-                        <li>Gestión de catálogos</li>
-                        <li>Relaciones con manufacturers</li>
-                        <li>Programas de brand registry</li>
+                        <li>Gestión de relaciones a largo plazo</li>
+                        <li>Control de calidad continuo</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- International Tab -->
-        <div id="international" class="tab-content">
-            <h2 class="section-title">Ventas Internacionales</h2>
+        <!-- Ventas Internacionales Tab - AJUSTADA -->
+        <div id="internacional" class="tab-content">
+            <h2 class="section-title">Expansión Global con Nuestras Cuentas</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <h3>Global Shipping Program</h3>
-                    <p>Gestión completa del programa de envíos internacionales de eBay.</p>
+                    <p>Gestión completa del programa de envíos internacionales desde <strong>nuestras cuentas</strong>.</p>
                     <ul class="feature-list">
                         <li>Configuración GSP completa</li>
                         <li>Gestión de aduanas e impuestos</li>
@@ -505,8 +715,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Multi-marketplace Strategy</h3>
-                    <p>Estrategias para ventas en múltiples marketplaces internacionales.</p>
+                    <h3>Estrategia Multi-Mercado</h3>
+                    <p>Expansión a mercados internacionales con <strong>nuestras cuentas eBay</strong>.</p>
                     <ul class="feature-list">
                         <li>Expansión a mercados europeos</li>
                         <li>Localización de listings</li>
@@ -516,79 +726,168 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>International Compliance</h3>
-                    <p>Cumplimiento de regulaciones internacionales y estándares.</p>
+                    <h3>Optimización Internacional</h3>
+                    <p>Estrategias para maximizar ventas en mercados globales.</p>
                     <ul class="feature-list">
-                        <li>Normativas de exportación</li>
-                        <li>Requisitos de importación por país</li>
-                        <li>Certificaciones internacionales</li>
-                        <li>Gestión de restricciones</li>
-                        <li>Asesoría legal internacional</li>
+                        <li>Análisis de tendencias por país</li>
+                        <li>Optimización de precios internacionales</li>
+                        <li>Gestión de envíos cross-border</li>
+                        <li>Adaptación cultural de listings</li>
+                        <li>Manejo de zonas horarias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cumplimiento eBay Tab - AJUSTADA -->
+        <div id="cumplimiento" class="tab-content">
+            <h2 class="section-title">Cumplimiento Garantizado en eBay</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Gestión de Políticas</h3>
+                    <p><strong>Cumplimiento estricto</strong> de todas las políticas de eBay.</p>
+                    <ul class="feature-list">
+                        <li>Cumplimiento políticas de dropshipping</li>
+                        <li>Gestión de políticas de vendedor</li>
+                        <li>Prevención de suspensiones</li>
+                        <li>Manejo de reclamos y casos</li>
+                        <li>Actualización constante de normativas</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Control de Calidad</h3>
+                    <p>Sistemas de verificación para garantizar productos compatibles.</p>
+                    <ul class="feature-list">
+                        <li>Verificación de productos restringidos</li>
+                        <li>Control de autenticidad</li>
+                        <li>Inspección pre-envío</li>
+                        <li>Gestión de garantías</li>
+                        <li>Protocolos de calidad</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Soporte y Resolución</h3>
+                    <p>Gestión profesional de incidencias en <strong>nuestras cuentas</strong>.</p>
+                    <ul class="feature-list">
+                        <li>Atención al cliente especializada</li>
+                        <li>Gestión de devoluciones</li>
+                        <li>Resolución de casos eBay</li>
+                        <li>Soporte post-venta</li>
+                        <li>Manejo de feedback y reputación</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- eBay Features Section -->
-    <div class="ebay-features">
+    <!-- Process Flow Section - NUEVA -->
+    <div class="process-flow">
         <div class="container">
-            <h2 class="section-title">Ventajas de eBay</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🌎</div>
-                    <h4>Alcance Global</h4>
-                    <p>Acceso a mercados internacionales con el Global Shipping Program</p>
+            <h2 class="section-title">Nuestro Flujo en eBay</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-step-number">1</div>
+                    <h4>Análisis y Selección</h4>
+                    <p>Identificamos productos rentables. <strong>Los socios pueden proponer productos</strong>.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💰</div>
-                    <h4>Menos Competencia</h4>
-                    <p>Mercado menos saturado que Amazon con buenos márgenes</p>
+                <div class="flow-step">
+                    <div class="flow-step-number">2</div>
+                    <h4>Publicación en Nuestras Cuentas</h4>
+                    <p>Creamos listings en <strong>nuestras cuentas eBay verificadas</strong>.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h4>Flexibilidad</h4>
-                    <p>Múltiples modelos de negocio: auctions, fixed price, offers</p>
+                <div class="flow-step">
+                    <div class="flow-step-number">3</div>
+                    <h4>Gestión de Ventas</h4>
+                    <p>Monitorizamos ventas y coordinamos con proveedores.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>Protección al Vendedor</h4>
-                    <p>Sistema robusto de protección contra fraudes y chargebacks</p>
+                <div class="flow-step">
+                    <div class="flow-step-number">4</div>
+                    <h4>Coordinación Prep Centers</h4>
+                    <p>Enviamos a prep centers para inspección y re-empaque.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">5</div>
+                    <h4>Distribución de Ganancias</h4>
+                    <p><strong>Compartimos utilidades</strong> basado en modelo revenue share.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- International Markets Section -->
+    <!-- eBay Features Section - AJUSTADA -->
+    <div class="ebay-features">
+        <div class="container">
+            <h2 class="section-title">Ventajas para Nuestros Socios</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌎</div>
+                    <h4>Alcance Global</h4>
+                    <p>Acceso a mercados internacionales con el Global Shipping Program desde <strong>nuestras cuentas</strong></p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h4>Menos Competencia</h4>
+                    <p>Mercado menos saturado que Amazon con <strong>mejores márgenes para socios</strong></p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Flexibilidad</h4>
+                    <p>Múltiples modelos de negocio: auctions, fixed price, offers en <strong>nuestras cuentas</strong></p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Protección al Vendedor</h4>
+                    <p>Sistema robusto de protección contra fraudes en <strong>nuestras cuentas verificadas</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- International Markets Section - AJUSTADA -->
     <div class="international">
         <div class="container">
             <h2 class="section-title" style="color: white;">Mercados Internacionales</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2em; opacity: 0.9;">
+                Operamos con <strong>nuestras cuentas</strong> en los principales marketplaces de eBay a nivel global
+            </p>
             <div class="countries-grid">
                 <div class="country-item">
                     <h4>🇺🇸 USA</h4>
-                    <p>Mercado principal</p>
+                    <p>eBay.com - Mercado principal</p>
                 </div>
                 <div class="country-item">
                     <h4>🇬🇧 UK</h4>
-                    <p>eBay.co.uk</p>
+                    <p>eBay.co.uk - Mercado europeo clave</p>
                 </div>
                 <div class="country-item">
                     <h4>🇩🇪 Alemania</h4>
-                    <p>eBay.de</p>
+                    <p>eBay.de - Mayor mercado de Europa</p>
                 </div>
                 <div class="country-item">
                     <h4>🇦🇺 Australia</h4>
-                    <p>eBay.com.au</p>
+                    <p>eBay.com.au - Mercado en crecimiento</p>
                 </div>
                 <div class="country-item">
                     <h4>🇨🇦 Canadá</h4>
-                    <p>eBay.ca</p>
+                    <p>eBay.ca - Mercado norteamericano</p>
                 </div>
                 <div class="country-item">
                     <h4>🇪🇸 España</h4>
-                    <p>eBay.es</p>
+                    <p>eBay.es - Mercado mediterráneo</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- CTA Section - NUEVA -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="section-title">¿Listo para Ser Nuestro Socio en eBay?</h2>
+            <p>
+                Únete a nuestro sistema probado de eBay multi-cuenta. Operamos con cuentas verificadas, 
+                garantizamos cumplimiento de políticas y compartimos las ganancias de manera transparente.
+            </p>
+            <a href="contacto.html" class="cta-button">Iniciar Conversación Estratégica</a>
         </div>
     </div>
 
@@ -596,7 +895,7 @@
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p>eBay Dropshipping & Wholesale Experts</p>
+            <p><strong>Socio Estratégico en eBay Multi-Cuenta</strong></p>
             <div style="margin-top: 20px; opacity: 0.8;">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
@@ -621,6 +920,43 @@
             document.getElementById(tabName).classList.add("active");
             event.currentTarget.classList.add("active");
         }
+
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.querySelectorAll('.service-card, .feature-item, .model-card, .flow-step, .country-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
