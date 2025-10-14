@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropshipping Amazon FBM - Sirius Usa LLC</title>
+    <title>Amazon FBM - Socio Estratégico | Sirius Usa LLC</title>
     <style>
         /* Reutilizar los mismos estilos del Home */
         html, body {
@@ -27,6 +27,8 @@
             --amazon-orange: #ff9900;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --success-green: #10b981;
+            --info-blue: #3b82f6;
         }
         
         body {
@@ -106,16 +108,39 @@
         
         /* Header Específico para Amazon */
         .amazon-header {
-            background: linear-gradient(135deg, var(--amazon-orange), #ffac33);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
             padding: 100px 20px 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .amazon-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
         
         .amazon-header h1 {
             font-size: 3.2em;
             margin-bottom: 20px;
             font-weight: 700;
+            position: relative;
+        }
+        
+        .amazon-header p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            line-height: 1.8;
+            opacity: 0.9;
         }
         
         .container {
@@ -141,6 +166,105 @@
             background: var(--accent-gold);
             margin: 20px auto 0;
             border-radius: 2px;
+        }
+        
+        /* Partnership Model Section */
+        .partnership-model {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .model-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid;
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .investor-model {
+            border-top-color: var(--success-green);
+        }
+        
+        .supplier-model {
+            border-top-color: var(--info-blue);
+        }
+        
+        .prepcenter-model {
+            border-top-color: var(--accent-gold);
+        }
+        
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .investor-icon {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: white;
+        }
+        
+        .supplier-icon {
+            background: linear-gradient(135deg, var(--info-blue), #1d4ed8);
+            color: white;
+        }
+        
+        .prepcenter-icon {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: white;
+        }
+        
+        .model-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .model-list {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .model-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1em;
+        }
+        
+        .model-list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5em;
         }
         
         /* Service Tabs */
@@ -321,6 +445,53 @@
             margin-top: 80px;
         }
         
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section .section-title {
+            color: var(--white);
+        }
+        
+        .cta-section .section-title::after {
+            background: var(--accent-gold);
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .service-tabs {
@@ -342,6 +513,10 @@
             }
             
             .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -367,42 +542,88 @@
         </div>
     </nav>
 
-    <!-- Amazon Header -->
+    <!-- Amazon Header - REDISEÑADO -->
     <div class="amazon-header">
         <div class="container">
-            <h1>Dropshipping Especializado en Amazon FBM</h1>
-            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
-                Publicamos tus productos en Amazon FBM, gestionamos proveedores globales y coordinamos prep centers para un fulfillment perfecto.
-            </p>
+            <h1>Socio Estratégico en Amazon FBM</h1>
+            <p>Operamos con <strong>nuestras cuentas Amazon verificadas</strong>. Tú participas en las ganancias sin riesgos de suspensiones. Sistema especializado en FBM con integración de prep centers.</p>
+            <a href="contacto.html" class="cta-button">Explorar Asociación en Amazon</a>
         </div>
     </div>
 
-    <!-- Service Tabs -->
+    <!-- Partnership Model Section - NUEVA SECCIÓN -->
+    <div class="partnership-model">
+        <div class="container">
+            <h2 class="section-title">Modelo de Asociación en Amazon</h2>
+            <div class="model-grid">
+                <!-- Para Inversores -->
+                <div class="model-card investor-model">
+                    <div class="model-icon investor-icon">$</div>
+                    <h3>Para Inversores</h3>
+                    <ul class="model-list">
+                        <li><strong>Capital para escalar en Amazon FBM</strong></li>
+                        <li>Retorno basado en porcentaje de ventas</li>
+                        <li>Mínimo riesgo - cuentas propias verificadas</li>
+                        <li>Reportes transparentes de rendimiento</li>
+                        <li>Diversificación en ecommerce</li>
+                    </ul>
+                </div>
+                
+                <!-- Para Proveedores -->
+                <div class="model-card supplier-model">
+                    <div class="model-icon supplier-icon">📦</div>
+                    <h3>Para Proveedores</h3>
+                    <ul class="model-list">
+                        <li><strong>Venda más a través de nuestras cuentas Amazon</strong></li>
+                        <li>Sin preocuparse por gestión de marketplace</li>
+                        <li>Pago garantizado y oportuno</li>
+                        <li>Ampliación de canal de ventas</li>
+                        <li>Productos expuestos a millones de compradores</li>
+                    </ul>
+                </div>
+                
+                <!-- Para Prep Centers -->
+                <div class="model-card prepcenter-model">
+                    <div class="model-icon prepcenter-icon">🏭</div>
+                    <h3>Para Prep Centers</h3>
+                    <ul class="model-list">
+                        <li><strong>Volumen constante de trabajo Amazon FBM</strong></li>
+                        <li>Productos pre-verificados y compatibles</li>
+                        <li>Cumplimiento garantizado de políticas Amazon</li>
+                        <li>Comunicación eficiente y pagos regulares</li>
+                        <li>Crecimiento conjunto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Tabs - AJUSTADAS -->
     <div class="container" style="padding: 80px 20px;">
         <div class="service-tabs">
-            <button class="tab-button active" onclick="openTab('dropshipping')">Dropshipping FBM</button>
+            <button class="tab-button active" onclick="openTab('modelo')">Modelo FBM</button>
             <button class="tab-button" onclick="openTab('analisis')">Análisis de Productos</button>
             <button class="tab-button" onclick="openTab('cumplimiento')">Cumplimiento Amazon</button>
         </div>
 
-        <!-- Dropshipping FBM Tab -->
-        <div id="dropshipping" class="tab-content active">
-            <h2 class="section-title">Dropshipping Profesional en Amazon FBM</h2>
+        <!-- Modelo FBM Tab - AJUSTADA -->
+        <div id="modelo" class="tab-content active">
+            <h2 class="section-title">Operamos con Nuestras Cuentas Amazon FBM</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <h3>Gestión Completa de Listings</h3>
-                    <p>Publicación y optimización profesional de productos en Amazon FBM con estrategias comprobadas.</p>
+                    <h3>Publicación en Cuentas Propias</h3>
+                    <p>Gestionamos <strong>nuestras cuentas Amazon verificadas</strong> con estrategias comprobadas de FBM.</p>
                     <ul class="feature-list">
+                        <li><strong>Operamos con cuentas propias verificadas</strong></li>
                         <li>Creación de listings optimizados SEO</li>
                         <li>Investigación de keywords rentables</li>
                         <li>Optimización de imágenes profesionales</li>
                         <li>Gestión de precios competitivos</li>
-                        <li>Monitorización de competencia</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <h3>Coordinación con Prep Centers</h3>
-                    <p>Gestión estratégica con centros de preparación para inspección y re-empaque profesional.</p>
+                    <p>Gestión estratégica con centros de preparación para fulfillment impecable.</p>
                     <ul class="feature-list">
                         <li>Inspección de calidad exhaustiva</li>
                         <li>Re-packaging según políticas Amazon</li>
@@ -412,8 +633,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Gestión de Proveedores Globales</h3>
-                    <p>Conexión con distribuidores confiables y verificación de productos compatibles con Amazon.</p>
+                    <h3>Gestión de Cadena de Suministro</h3>
+                    <p>Conexión con distribuidores confiables y verificación de productos.</p>
                     <ul class="feature-list">
                         <li>Acceso a proveedores verificados</li>
                         <li>Negociación de mejores precios</li>
@@ -425,13 +646,13 @@
             </div>
         </div>
 
-        <!-- Análisis de Productos Tab -->
+        <!-- Análisis de Productos Tab - AJUSTADA -->
         <div id="analisis" class="tab-content">
-            <h2 class="section-title">Análisis Avanzado de Productos</h2>
+            <h2 class="section-title">Análisis para Maximizar Ganancias</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <h3>Investigación de Mercado</h3>
-                    <p>Identificación de oportunidades de producto con alto margen y demanda estable.</p>
+                    <p>Identificación de oportunidades con alto margen para <strong>nuestras cuentas Amazon</strong>.</p>
                     <ul class="feature-list">
                         <li>Análisis de tendencias de mercado</li>
                         <li>Identificación de nichos rentables</li>
@@ -442,7 +663,7 @@
                 </div>
                 <div class="service-card">
                     <h3>Análisis de Rentabilidad</h3>
-                    <p>Cálculo preciso de márgenes considerando todos los costos operativos.</p>
+                    <p>Cálculo preciso de márgenes para <strong>maximizar ganancias compartidas</strong>.</p>
                     <ul class="feature-list">
                         <li>Cálculo de ROI por producto</li>
                         <li>Análisis de fees de Amazon</li>
@@ -453,7 +674,7 @@
                 </div>
                 <div class="service-card">
                     <h3>Optimización de Precios</h3>
-                    <p>Estrategias dinámicas de pricing para maximizar conversiones y margen.</p>
+                    <p>Estrategias dinámicas para maximizar conversiones y margen.</p>
                     <ul class="feature-list">
                         <li>Análisis de precios de competencia</li>
                         <li>Estrategias de pricing dinámico</li>
@@ -465,13 +686,13 @@
             </div>
         </div>
 
-        <!-- Cumplimiento Amazon Tab -->
+        <!-- Cumplimiento Amazon Tab - AJUSTADA -->
         <div id="cumplimiento" class="tab-content">
-            <h2 class="section-title">Cumplimiento de Políticas Amazon</h2>
+            <h2 class="section-title">Cumplimiento Garantizado en Amazon</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <h3>Gestión de Políticas</h3>
-                    <p>Cumplimiento estricto de todas las políticas de Amazon FBM y dropshipping.</p>
+                    <p><strong>Cumplimiento estricto</strong> de todas las políticas de Amazon FBM.</p>
                     <ul class="feature-list">
                         <li>Cumplimiento políticas de empaque</li>
                         <li>Gestión de políticas de vendedor</li>
@@ -482,7 +703,7 @@
                 </div>
                 <div class="service-card">
                     <h3>Control de Calidad</h3>
-                    <p>Sistemas de verificación para garantizar productos compatibles con Amazon.</p>
+                    <p>Sistemas de verificación para garantizar productos compatibles.</p>
                     <ul class="feature-list">
                         <li>Verificación de productos restringidos</li>
                         <li>Control de autenticidad</li>
@@ -493,7 +714,7 @@
                 </div>
                 <div class="service-card">
                     <h3>Soporte y Resolución</h3>
-                    <p>Gestión profesional de incidencias y soporte al cliente.</p>
+                    <p>Gestión profesional de incidencias en <strong>nuestras cuentas</strong>.</p>
                     <ul class="feature-list">
                         <li>Atención al cliente especializada</li>
                         <li>Gestión de devoluciones</li>
@@ -506,61 +727,73 @@
         </div>
     </div>
 
-    <!-- Process Flow Section -->
+    <!-- Process Flow Section - AJUSTADA -->
     <div class="process-flow">
         <div class="container">
             <h2 class="section-title">Nuestro Flujo en Amazon FBM</h2>
             <div class="flow-steps">
                 <div class="flow-step">
                     <div class="flow-step-number">1</div>
-                    <h4>Análisis de Producto</h4>
-                    <p>Identificamos productos con mejor margen usando análisis de datos avanzado</p>
+                    <h4>Análisis y Selección</h4>
+                    <p>Identificamos productos rentables. <strong>Los socios pueden proponer productos</strong>.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-step-number">2</div>
-                    <h4>Publicación en Amazon</h4>
-                    <p>Creamos listings optimizados en Amazon FBM con estrategias SEO</p>
+                    <h4>Publicación en Nuestras Cuentas</h4>
+                    <p>Creamos listings en <strong>nuestras cuentas Amazon verificadas</strong>.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-step-number">3</div>
                     <h4>Gestión de Venta</h4>
-                    <p>Monitorizamos ventas y coordinamos con proveedores globales</p>
+                    <p>Monitorizamos ventas y coordinamos con proveedores.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-step-number">4</div>
-                    <h4>Prep Center</h4>
-                    <p>Enviamos a prep centers para inspección y re-empaque profesional</p>
+                    <h4>Coordinación Prep Centers</h4>
+                    <p>Enviamos a prep centers para inspección y re-empaque.</p>
                 </div>
                 <div class="flow-step">
                     <div class="flow-step-number">5</div>
-                    <h4>Envío al Cliente</h4>
-                    <p>Gestionamos envío directo al cliente final con tracking</p>
+                    <h4>Distribución de Ganancias</h4>
+                    <p><strong>Compartimos utilidades</strong> basado en modelo revenue share.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Benefits Section -->
+    <!-- Benefits Section - AJUSTADA -->
     <div class="benefits">
         <div class="container">
-            <h2 class="section-title">Ventajas de Nuestro Sistema</h2>
+            <h2 class="section-title">Ventajas para Nuestros Socios</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">📊</div>
                     <h3>Análisis Data-Driven</h3>
-                    <p>Tomamos decisiones basadas en datos reales de mercado y análisis de rentabilidad</p>
+                    <p>Decisiones basadas en datos reales de mercado para <strong>maximizar ganancias compartidas</strong>.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🛡️</div>
                     <h3>Cumplimiento Garantizado</h3>
-                    <p>100% de cumplimiento con políticas de Amazon y estándares de calidad</p>
+                    <p>100% de cumplimiento con políticas de Amazon. <strong>Cuentas propias verificadas</strong>.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🚀</div>
                     <h3>Escalabilidad</h3>
-                    <p>Sistema diseñado para crecer rápidamente sin comprometer calidad</p>
+                    <p>Sistema diseñado para crecer rápidamente sin comprometer calidad ni cumplimiento.</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- CTA Section - NUEVA -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="section-title">¿Listo para Ser Nuestro Socio en Amazon?</h2>
+            <p>
+                Únete a nuestro sistema probado de Amazon FBM. Operamos con cuentas verificadas, 
+                garantizamos cumplimiento de políticas y compartimos las ganancias de manera transparente.
+            </p>
+            <a href="contacto.html" class="cta-button">Iniciar Conversación Estratégica</a>
         </div>
     </div>
 
@@ -568,7 +801,7 @@
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p>Dropshipping Especializado en Amazon FBM</p>
+            <p><strong>Socio Estratégico en Amazon FBM</strong></p>
             <div style="margin-top: 20px; opacity: 0.8;">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
@@ -606,6 +839,29 @@
                     });
                 }
             });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.querySelectorAll('.service-card, .flow-step, .benefit-card, .model-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
