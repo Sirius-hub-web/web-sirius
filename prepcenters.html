@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnership con Prep Centers - Sirius Usa LLC</title>
+    <title>Prep Centers - Socio Estratégico | Sirius Usa LLC</title>
     <style>
-        /* Reutilizar estilos base */
+        /* MISMO ESTILO EXACTO QUE LAS OTRAS PÁGINAS */
         html, body {
             margin: 0;
             padding: 0;
@@ -24,10 +24,11 @@
             --primary-blue: #1e3a8a;
             --secondary-black: #000000;
             --accent-gold: #f59e0b;
-            --partner-teal: #0d9488;
-            --partner-indigo: #4f46e5;
+            --prepcenter-teal: #0d9488;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --success-green: #10b981;
+            --info-blue: #3b82f6;
         }
         
         body {
@@ -37,7 +38,7 @@
             padding-top: 70px;
         }
         
-        /* Navigation */
+        /* Navigation - MISMO QUE LAS OTRAS PÁGINAS */
         .navbar {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -45,6 +46,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
         
         .nav-container {
@@ -101,22 +103,45 @@
         }
         
         .nav-menu a.active {
-            color: var(--partner-teal);
+            color: var(--prepcenter-teal);
             background: var(--light-bg);
         }
         
-        /* Header Específico para Prep Centers */
-        .partnership-header {
-            background: linear-gradient(135deg, var(--partner-teal), #0f766e);
+        /* Header - MISMO ESTILO QUE LAS OTRAS PÁGINAS */
+        .prepcenters-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
             padding: 100px 20px 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .partnership-header h1 {
+        .prepcenters-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .prepcenters-header h1 {
             font-size: 3.2em;
             margin-bottom: 20px;
             font-weight: 700;
+            position: relative;
+        }
+        
+        .prepcenters-header p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+            line-height: 1.8;
+            opacity: 0.9;
         }
         
         .container {
@@ -144,14 +169,232 @@
             border-radius: 2px;
         }
         
-        /* Partnership Benefits */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Partnership Model Section - EXACTA A LAS OTRAS PÁGINAS */
+        .partnership-model {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .model-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid;
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .established-model {
+            border-top-color: var(--success-green);
+        }
+        
+        .growing-model {
+            border-top-color: var(--info-blue);
+        }
+        
+        .new-model {
+            border-top-color: var(--accent-gold);
+        }
+        
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .established-icon {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: white;
+        }
+        
+        .growing-icon {
+            background: linear-gradient(135deg, var(--info-blue), #1d4ed8);
+            color: white;
+        }
+        
+        .new-icon {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: white;
+        }
+        
+        .model-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .model-list {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .model-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1em;
+        }
+        
+        .model-list li:before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        /* Service Tabs - MISMA ESTRUCTURA QUE LAS OTRAS PÁGINAS */
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tab-button {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+        
+        .tab-button.active {
+            background: var(--prepcenter-teal);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3);
+        }
+        
+        .tab-button:hover:not(.active) {
+            background: var(--light-bg);
+            border-color: var(--prepcenter-teal);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Service Grid - MISMA ESTRUCTURA QUE LAS OTRAS PÁGINAS */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--prepcenter-teal);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--prepcenter-teal);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        /* Benefits Section - MEJORADA */
         .benefits-section {
             padding: 80px 0;
+            background: var(--light-bg);
         }
         
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
         
@@ -161,7 +404,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            border-top: 4px solid var(--partner-teal);
+            border-top: 4px solid var(--prepcenter-teal);
             transition: transform 0.3s ease;
         }
         
@@ -172,7 +415,7 @@
         .benefit-icon {
             font-size: 3em;
             margin-bottom: 20px;
-            color: var(--partner-teal);
+            color: var(--prepcenter-teal);
         }
         
         .benefit-card h3 {
@@ -181,53 +424,7 @@
             font-size: 1.4em;
         }
         
-        /* Requirements Section */
-        .requirements-section {
-            background: var(--light-bg);
-            padding: 80px 0;
-        }
-        
-        .requirements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .requirement-card {
-            background: var(--white);
-            padding: 30px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--partner-indigo);
-        }
-        
-        .requirement-card h4 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .requirement-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .requirement-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .requirement-list li:before {
-            content: "•";
-            color: var(--partner-indigo);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        /* Process Section */
+        /* Process Section - MEJORADA */
         .process-section {
             padding: 80px 0;
         }
@@ -242,13 +439,21 @@
         .process-step {
             text-align: center;
             padding: 30px 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
         }
         
         .step-circle {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--partner-teal), var(--partner-indigo));
+            width: 70px;
+            height: 70px;
+            background: var(--prepcenter-teal);
             color: var(--white);
             border-radius: 50%;
             display: flex;
@@ -257,7 +462,7 @@
             margin: 0 auto 20px;
             font-weight: bold;
             font-size: 1.5em;
-            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3);
         }
         
         .process-step h4 {
@@ -266,9 +471,38 @@
             font-size: 1.3em;
         }
         
-        /* Partnership Form */
+        /* Stats Section - MEJORADA */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--prepcenter-teal);
+            margin-bottom: 10px;
+        }
+        
+        /* Partnership Form Section - MEJORADA */
         .partnership-form-section {
-            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
             padding: 80px 0;
         }
@@ -325,28 +559,30 @@
             background: #e6900b;
         }
         
-        /* Stats Section */
-        .stats-section {
-            padding: 60px 0;
-            background: var(--white);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+        /* CTA Section - NUEVA (igual que otras páginas) */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
             text-align: center;
         }
         
-        .stat-item {
-            padding: 30px 20px;
+        .cta-section .section-title {
+            color: var(--white);
         }
         
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: var(--partner-teal);
-            margin-bottom: 10px;
+        .cta-section .section-title::after {
+            background: var(--accent-gold);
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.8;
         }
         
         .footer {
@@ -354,14 +590,26 @@
             color: var(--white);
             text-align: center;
             padding: 50px 0;
+            margin-top: 80px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
+            .service-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .service-grid,
             .benefits-grid,
-            .requirements-grid,
             .process-steps,
-            .stats-grid {
+            .stats-grid,
+            .model-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -372,113 +620,237 @@
     </style>
 </head>
 <body>
-    <!-- Navigation CORREGIDA -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">S</div>
-                    Sirius Usa LLC
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="amazon.html">Amazon</a></li>
-                    <li><a href="ebay.html">eBay</a></li>
-                    <li><a href="procesos.html">Procesos</a></li>
-                    <li><a href="prepcenters.html" class="active">Prep Centers</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                </ul>
-            </div>
-        </nav>
-    <!-- Partnership Header -->
-    <div class="partnership-header">
+    <!-- Navigation - MISMA ESTRUCTURA QUE LAS OTRAS PÁGINAS -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">S</div>
+                Sirius Usa LLC
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="amazon.html">Amazon</a></li>
+                <li><a href="ebay.html">eBay</a></li>
+                <li><a href="procesos.html">Procesos</a></li>
+                <li><a href="prepcenters.html" class="active">Prep Centers</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header - REDISEÑADO CON ENFOQUE DE SOCIOS -->
+    <div class="prepcenters-header">
         <div class="container">
-            <h1>Partnership con Prep Centers</h1>
-            <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
-                Establecemos relaciones estratégicas con prep centers confiables para crecimiento mutuo y operaciones eficientes.
-            </p>
+            <h1>Socio Estratégico para Prep Centers</h1>
+            <p>Buscamos <strong>prep centers confiables</strong> para asociaciones de crecimiento mutuo. Ofrecemos volumen constante, pagos puntuales y procesos optimizados para maximizar la eficiencia de su operación.</p>
+            <a href="#partnership-form" class="cta-button">Solicitar Partnership</a>
         </div>
     </div>
 
-    <!-- Benefits Section -->
-    <div class="benefits-section">
+    <!-- Partnership Model Section - EXACTA A LAS OTRAS PÁGINAS -->
+    <div class="partnership-model">
         <div class="container">
-            <h2 class="section-title">Beneficios del Partnership</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Volumen Estable</h3>
-                    <p>Flujo constante de órdenes con volúmenes predecibles que permiten una planificación eficiente de recursos.</p>
+            <h2 class="section-title">Modelo de Asociación para Prep Centers</h2>
+            <div class="model-grid">
+                <div class="model-card established-model">
+                    <div class="model-icon established-icon">🏭</div>
+                    <h3>Para Prep Centers Establecidos</h3>
+                    <ul class="model-list">
+                        <li><strong>Volumen constante y predecible</strong></li>
+                        <li>Integración con sistemas existentes</li>
+                        <li>Oportunidades de expansión</li>
+                        <li>Tarifas competitivas</li>
+                        <li>Colaboración estratégica a largo plazo</li>
+                    </ul>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💳</div>
-                    <h3>Pagos Puntuales</h3>
-                    <p>Procesos de pago automatizados y siempre a tiempo, con términos claros y transparentes.</p>
+                
+                <div class="model-card growing-model">
+                    <div class="model-icon growing-icon">📈</div>
+                    <h3>Para Prep Centers en Crecimiento</h3>
+                    <ul class="model-list">
+                        <li><strong>Escalabilidad controlada</strong></li>
+                        <li>Soporte en optimización de procesos</li>
+                        <li>Acceso a mejores prácticas</li>
+                        <li>Flexibilidad en volúmenes</li>
+                        <li>Mentoría operativa</li>
+                    </ul>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🤝</div>
-                    <h3>Comunicación Profesional</h3>
-                    <p>Coordinación eficiente mediante sistemas establecidos y puntos de contacto designados.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Crecimiento Conjunto</h3>
-                    <p>Oportunidades de escalar operaciones juntos con estrategias de crecimiento planificadas.</p>
+                
+                <div class="model-card new-model">
+                    <div class="model-icon new-icon">🚀</div>
+                    <h3>Para Nuevos Prep Centers</h3>
+                    <ul class="model-list">
+                        <li><strong>Onboarding guiado y soporte</strong></li>
+                        <li>Procesos estandarizados</li>
+                        <li>Capacitación en políticas de marketplaces</li>
+                        <li>Volúmenes iniciales manejables</li>
+                        <li>Feedback constante para mejora</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Requirements Section -->
-    <div class="requirements-section">
-        <div class="container">
-            <h2 class="section-title">Requisitos del Prep Center</h2>
-            <div class="requirements-grid">
-                <div class="requirement-card">
-                    <h4>Capacidades Operativas</h4>
-                    <ul class="requirement-list">
-                        <li>Almacenamiento seguro y organizado</li>
-                        <li>Capacidad de procesamiento: 50+ órdenes/día</li>
+    <!-- Service Tabs - MISMA ESTRUCTURA QUE LAS OTRAS PÁGINAS -->
+    <div class="container" style="padding: 80px 20px;">
+        <div class="service-tabs">
+            <button class="tab-button active" onclick="openTab('beneficios')">Beneficios</button>
+            <button class="tab-button" onclick="openTab('requisitos')">Requisitos</button>
+            <button class="tab-button" onclick="openTab('proceso')">Proceso de Trabajo</button>
+        </div>
+
+        <!-- Beneficios Tab - AJUSTADA -->
+        <div id="beneficios" class="tab-content active">
+            <h2 class="section-title">Ventajas de Asociarse con Nosotros</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Volumen Constante y Predecible</h3>
+                    <p>Flujo estable de órdenes que permite una <strong>planificación eficiente</strong> de recursos y capacidad.</p>
+                    <ul class="feature-list">
+                        <li><strong>Volumen diario predecible</strong></li>
+                        <li>Planificación a largo plazo</li>
+                        <li>Minimización de tiempos muertos</li>
+                        <li>Optimización de recursos humanos</li>
+                        <li>Maximización de utilización de espacio</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Pagos Puntuales y Transparentes</h3>
+                    <p>Procesos de pago <strong>automáticos y siempre a tiempo</strong>, con términos claros y sin sorpresas.</p>
+                    <ul class="feature-list">
+                        <li><strong>Pagos semanales garantizados</strong></li>
+                        <li>Transparencia total en tarifas</li>
+                        <li>Reportes detallados de actividad</li>
+                        <li>Sistema de pago automatizado</li>
+                        <li>Soporte financiero dedicado</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Crecimiento y Desarrollo Conjunto</h3>
+                    <p>Oportunidades de <strong>escalar operaciones juntos</strong> con estrategias de crecimiento planificadas.</p>
+                    <ul class="feature-list">
+                        <li><strong>Expansión progresiva de volúmenes</strong></li>
+                        <li>Acceso a mejores prácticas</li>
+                        <li>Optimización continua de procesos</li>
+                        <li>Capacitación en nuevas tecnologías</li>
+                        <li>Oportunidades de diversificación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requisitos Tab - AJUSTADA -->
+        <div id="requisitos" class="tab-content">
+            <h2 class="section-title">Requisitos para Nuestros Socios Prep Centers</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Capacidades Operativas</h3>
+                    <p>Infraestructura y procesos que garanticen <strong>cumplimiento y eficiencia</strong> en todas las operaciones.</p>
+                    <ul class="feature-list">
+                        <li><strong>Almacenamiento seguro y organizado</strong></li>
+                        <li>Capacidad mínima: 50+ órdenes/día</li>
                         <li>Sistema de gestión de inventario</li>
-                        <li>Áreas de recepción e inspección</li>
-                        <li>Espacio para re-packaging</li>
+                        <li>Áreas diferenciadas para recepción e inspección</li>
+                        <li>Espacio adecuado para re-packaging</li>
                     </ul>
                 </div>
-                <div class="requirement-card">
-                    <h4>Estándares de Calidad</h4>
-                    <ul class="requirement-list">
-                        <li>Procesos de inspección documentados</li>
-                        <li>Control de calidad por múltiples etapas</li>
-                        <li>Manejo de productos delicados</li>
+                <div class="service-card">
+                    <h3>Estándares de Calidad</h3>
+                    <p>Compromiso con los <strong>más altos estándares</strong> para garantizar satisfacción del cliente final.</p>
+                    <ul class="feature-list">
+                        <li><strong>Procesos de inspección documentados</strong></li>
+                        <li>Control de calidad en múltiples etapas</li>
+                        <li>Manejo cuidadoso de productos</li>
                         <li>Protocolos de limpieza y organización</li>
-                        <li>Sistema de reporte de defectos</li>
+                        <li>Sistema de reporte de incidencias</li>
                     </ul>
                 </div>
-                <div class="requirement-card">
-                    <h4>Integración Tecnológica</h4>
-                    <ul class="requirement-list">
-                        <li>API o sistema de integración</li>
+                <div class="service-card">
+                    <h3>Integración Tecnológica</h3>
+                    <p>Capacidad para <strong>conectarse eficientemente</strong> con nuestros sistemas y procesos.</p>
+                    <ul class="feature-list">
+                        <li><strong>API o sistema de integración disponible</strong></li>
                         <li>Actualización de inventario en tiempo real</li>
                         <li>Sistema de tracking automatizado</li>
                         <li>Comunicación electrónica eficiente</li>
                         <li>Reportes automáticos de status</li>
                     </ul>
                 </div>
-                <div class="requirement-card">
-                    <h4>Logística y Envíos</h4>
-                    <ul class="requirement-list">
-                        <li>Acuerdos con carriers principales</li>
-                        <li>Procesamiento same-day/next-day</li>
-                        <li>Manejo de envíos internacionales</li>
+            </div>
+        </div>
+
+        <!-- Proceso Tab - AJUSTADA -->
+        <div id="proceso" class="tab-content">
+            <h2 class="section-title">Nuestro Proceso de Trabajo Conjunto</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Comunicación y Coordinación</h3>
+                    <p>Sistemas establecidos para una <strong>comunicación fluida y eficiente</strong> en todas las etapas.</p>
+                    <ul class="feature-list">
+                        <li><strong>Puntos de contacto designados</strong></li>
+                        <li>Comunicación preferencial por canales establecidos</li>
+                        <li>Reportes regulares de status</li>
+                        <li>Reuniones de seguimiento periódicas</li>
+                        <li>Resolución rápida de incidencias</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Gestión de Órdenes y Envíos</h3>
+                    <p>Procesos optimizados para <strong>máxima eficiencia</strong> en el manejo de inventario y envíos.</p>
+                    <ul class="feature-list">
+                        <li><strong>Procesamiento same-day/next-day</strong></li>
+                        <li>Gestión automatizada de órdenes</li>
                         <li>Sistema de etiquetado FBA/FBM</li>
-                        <li>Gestión de devoluciones</li>
+                        <li>Coordinación con carriers</li>
+                        <li>Gestión eficiente de devoluciones</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Mejora Continua y Optimización</h3>
+                    <p>Enfoque constante en <strong>optimizar procesos y resultados</strong> para beneficio mutuo.</p>
+                    <ul class="feature-list">
+                        <li><strong>Análisis regular de métricas</strong></li>
+                        <li>Feedback continuo para mejora</li>
+                        <li>Implementación de mejores prácticas</li>
+                        <li>Optimización de costos y eficiencias</li>
+                        <li>Innovación en procesos conjuntos</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Process Section -->
+    <!-- Benefits Section - MEJORADA -->
+    <div class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Por Qué Asociarse con Nosotros</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Estabilidad Financiera</h3>
+                    <p>Flujo constante de trabajo y <strong>pagos puntuales garantizados</strong> para una operación predecible y estable.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Asociación de Verdad</h3>
+                    <p>No somos solo un cliente más - <strong>invertimos en el éxito mutuo</strong> y crecimiento conjunto.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Procesos Optimizados</h3>
+                    <p>Sistemas y procedimientos que <strong>maximizan la eficiencia</strong> y minimizan errores y reprocesos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Crecimiento Planificado</h3>
+                    <p>Oportunidades de <strong>expansión controlada y sostenible</strong> con soporte y orientación.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Section - MEJORADA -->
     <div class="process-section">
         <div class="container">
             <h2 class="section-title">Proceso de Onboarding</h2>
@@ -486,55 +858,56 @@
                 <div class="process-step">
                     <div class="step-circle">1</div>
                     <h4>Evaluación Inicial</h4>
-                    <p>Revisión de capacidades y fit estratégico mediante cuestionario y call inicial.</p>
+                    <p>Revisión de capacidades y fit estratégico mediante cuestionario detallado y reunión inicial.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-circle">2</div>
-                    <h4>Prueba Piloto</h4>
-                    <p>Envío de lote pequeño (10-20 unidades) para evaluar calidad y procesos.</p>
+                    <h4>Prueba Piloto Controlada</h4>
+                    <p>Envío de lote pequeño (10-20 unidades) para evaluar calidad, procesos y comunicación.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-circle">3</div>
-                    <h4>Integración Técnica</h4>
-                    <p>Configuración de sistemas y establecimiento de comunicación automatizada.</p>
+                    <h4>Integración Completa</h4>
+                    <p>Configuración de sistemas, establecimiento de comunicación y procesos operativos.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-circle">4</div>
                     <h4>Escalado Gradual</h4>
-                    <p>Aumento progresivo de volumen basado en performance y capacidad.</p>
+                    <p>Aumento progresivo de volumen basado en performance, capacidad y satisfacción mutua.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Stats Section -->
+    <!-- Stats Section - MEJORADA -->
     <div class="stats-section">
         <div class="container">
+            <h2 class="section-title">Nuestros Estándares de Calidad</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">50+</div>
-                    <p>Órdenes Diarias Promedio</p>
+                    <p>Órdenes Diarias por Prep Center</p>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24h</div>
-                    <p>Tiempo de Procesamiento</p>
+                    <p>Tiempo Máximo de Procesamiento</p>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">99.8%</div>
-                    <p>Precisión en Órdenes</p>
+                    <p>Precisión en Preparación de Órdenes</p>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">7</div>
-                    <p>Días Pago</p>
+                    <p>Días para Pago Garantizado</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Partnership Form Section -->
-    <div class="partnership-form-section">
+    <!-- Partnership Form Section - MEJORADA -->
+    <div class="partnership-form-section" id="partnership-form">
         <div class="container">
-            <h2 class="section-title" style="color: white;">¿Interesado en Partnership?</h2>
+            <h2 class="section-title" style="color: white;">¿Listo para Ser Nuestro Socio?</h2>
             <div class="form-container">
                 <form id="partnershipForm">
                     <div class="form-group">
@@ -594,11 +967,23 @@
         </div>
     </div>
 
+    <!-- CTA Section - NUEVA (igual que otras páginas) -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="section-title">¿Listo para Crecer Juntos?</h2>
+            <p>
+                Únase a nuestra red de prep centers estratégicos. Ofrecemos relaciones a largo plazo basadas en 
+                confianza, transparencia y crecimiento mutuo. Juntos podemos construir operaciones más eficientes y rentables.
+            </p>
+            <a href="#partnership-form" class="cta-button">Iniciar Colaboración</a>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p>Strategic Prep Center Partnerships</p>
+            <p><strong>Socios Estratégicos para Prep Centers</strong></p>
             <div style="margin-top: 20px; opacity: 0.8;">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
@@ -606,6 +991,24 @@
     </div>
 
     <script>
+        function openTab(tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the specific tab content and activate button
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
         // Form handling
         document.getElementById('partnershipForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -616,9 +1019,9 @@
             this.reset();
         });
 
-        // Animaciones para las cards
+        // Animaciones para todos los elementos
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.benefit-card, .requirement-card');
+            const cards = document.querySelectorAll('.service-card, .benefit-card, .model-card, .process-step, .stat-item');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -634,6 +1037,20 @@
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
+            });
+        });
+
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
