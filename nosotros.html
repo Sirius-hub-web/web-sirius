@@ -5,9 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Sirius Usa LLC</title>
     <style>
-        /* Mantenemos todos los estilos pero agregamos reforzadores visuales */
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-black: #000000;
+            --accent-gold: #f59e0b;
+            --amazon-orange: #ff9900;
+            --ebay-multicolor: linear-gradient(45deg, #E53238, #0064D2, #F5AF02, #86B817);
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --teal-accent: #0d9488;
+        }
         
-        /* Nuevos estilos para reforzar */
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+        
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-bg);
+        }
+
+        /* Hero Section Nosotros */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 80px;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .about-hero p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        /* Elementos de refuerzo con colores Sirius */
         .highlight-box {
             background: linear-gradient(135deg, var(--accent-gold), #fbbf24);
             color: var(--secondary-black);
@@ -22,30 +154,145 @@
         }
         
         .model-emphasis {
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
             color: var(--white);
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 15px;
             margin: 50px 0;
             text-align: center;
             border-left: 5px solid var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
         }
         
         .partnership-badge {
             display: inline-block;
             background: var(--accent-gold);
             color: var(--secondary-black);
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 25px;
             font-weight: 700;
             margin: 15px 0;
             font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Misión y Visión */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .mission-card, .vision-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-card::before, .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .mission-card::before {
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+        }
+        
+        .vision-card::before {
+            background: linear-gradient(90deg, var(--accent-gold), var(--primary-blue));
+        }
+        
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--white);
+            font-size: 2em;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .mission-card h2, .vision-card h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        .mission-card p, .vision-card p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        /* Valores Mejorados */
+        .values-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-blue);
+            font-size: 2.8em;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-item {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #e1e5e9;
+            position: relative;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
         
         .value-item.enhanced {
             border: 2px solid var(--primary-blue);
-            transform: scale(1.05);
-            position: relative;
+            transform: scale(1.02);
         }
         
         .value-item.enhanced::after {
@@ -63,6 +310,390 @@
             justify-content: center;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .value-item i {
+            font-size: 2.5em;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .value-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        
+        .value-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sección Para Socios */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .partner-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--teal-accent);
+            transition: transform 0.3s;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .partner-card.investor {
+            border-top-color: var(--primary-blue);
+        }
+        
+        .partner-card.supplier {
+            border-top-color: var(--accent-gold);
+        }
+        
+        .partner-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--teal-accent), #0f766e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        
+        .partner-card.investor .partner-icon {
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+        }
+        
+        .partner-card.supplier .partner-icon {
+            background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+        }
+        
+        .partner-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+        
+        .partner-card ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .partner-card li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .partner-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal-accent);
+            font-weight: bold;
+        }
+        
+        .partner-card.investor li::before {
+            color: var(--primary-blue);
+        }
+        
+        .partner-card.supplier li::before {
+            color: var(--accent-gold);
+        }
+
+        /* Equipo */
+        .team-section {
+            margin-bottom: 80px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3.5em;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .team-member h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+        
+        .member-role {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .team-philosophy {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f9ff;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+            font-size: 0.9em;
+        }
+
+        /* Experiencia */
+        .experience-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
+            color: var(--white);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin-bottom: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 50px 50px;
+        }
+        
+        .experience-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .experience-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .stat-box {
+            padding: 30px 20px;
+        }
+        
+        .stat-box h3 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+        
+        .stat-box p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-partnership {
+            background: linear-gradient(135deg, var(--teal-accent), #0f766e);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.3);
+            border: 3px solid var(--white);
+        }
+        
+        .cta-partnership h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--secondary-black);
+            padding: 18px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+            background: #fbbf24;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-black);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 1.1em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .mission-vision-grid, .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .mission-card, .vision-card, .partner-card {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .about-hero {
+                padding: 80px 20px 60px;
+                margin-bottom: 60px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .about-hero p {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 2.2em;
+            }
+            
+            .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-section {
+                padding: 60px 25px;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-partnership {
+                padding: 40px 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .mission-card, .vision-card, .partner-card {
+                padding: 30px 20px;
+            }
+            
+            .icon-container {
+                width: 70px;
+                height: 70px;
+                font-size: 1.7em;
+            }
+            
+            .member-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.8em;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-box h3 {
+                font-size: 2.5em;
+            }
+            
+            .highlight-box, .model-emphasis {
+                padding: 20px 15px;
+                font-size: 1.1em;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -87,7 +718,7 @@
     </nav>
 
     <div class="page-container">
-        <!-- Hero Section REFORZADO -->
+        <!-- Hero Section -->
         <div class="about-hero">
             <h1>El Equipo detrás de Sirius USA LLC</h1>
             <p><strong>Operamos con NUESTRAS cuentas verificadas de Amazon y eBay.</strong> No gestionamos cuentas de terceros - creamos partnerships estratégicos donde todos ganamos.</p>
@@ -96,12 +727,12 @@
             </div>
         </div>
         
-        <!-- BANNER DE REFUERZO -->
+        <!-- Banner de refuerzo -->
         <div class="highlight-box">
             💎 <strong>DIFERENCIADOR CLAVE:</strong> Operamos con NUESTRAS cuentas verificadas - Tú participas en las ganancias SIN riesgos de suspensión
         </div>
         
-        <!-- Misión y Visión REFORZADOS -->
+        <!-- Misión y Visión -->
         <div class="mission-vision-grid">
             <div class="mission-card">
                 <div class="icon-container">
@@ -109,7 +740,7 @@
                 </div>
                 <h2>Nuestra Misión</h2>
                 <p><strong>Crecer junto a socios estratégicos</strong> a través de un modelo transparente de revenue sharing. Operamos con <strong>nuestras cuentas verificadas de Amazon y eBay</strong> para minimizar riesgos y maximizar oportunidades de crecimiento mutuo.</p>
-                <div style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+                <div class="team-philosophy">
                     <strong>🔒 PARA INGRESORES:</strong> Tu capital está protegido con nuestras cuentas verificadas y procesos auditados.
                 </div>
             </div>
@@ -120,13 +751,13 @@
                 </div>
                 <h2>Nuestra Visión</h2>
                 <p>Ser la red de partnerships más confiable en e-commerce, donde <strong>inversores, proveedores y prep centers</strong> encuentran oportunidades reales de crecimiento a través de un modelo colaborativo y transparente.</p>
-                <div style="margin-top: 20px; padding: 15px; background: #fff7ed; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
+                <div class="team-philosophy">
                     <strong>🤝 PARA PROVEEDORES:</strong> Expandimos tu mercado sin que gestiones marketplaces - nosotros operamos, tú produces.
                 </div>
             </div>
         </div>
         
-        <!-- ENFASIS DEL MODELO -->
+        <!-- Énfasis del modelo -->
         <div class="model-emphasis">
             <h3 style="color: var(--accent-gold); margin-bottom: 20px;">✨ NUESTRO COMPROMISO CON LOS SOCIOS</h3>
             <p style="font-size: 1.3em; font-weight: 600;">
@@ -134,7 +765,7 @@
             </p>
         </div>
         
-        <!-- Valores REFORZADOS -->
+        <!-- Valores -->
         <div class="values-section">
             <h2 class="section-title">Los 4 Pilares de Nuestro Éxito</h2>
             <div class="values-grid">
@@ -164,34 +795,39 @@
             </div>
         </div>
 
-        <!-- NUEVA SECCIÓN: Por Qué Elegirnos -->
-        <div class="mission-vision-grid" style="margin-top: 60px;">
-            <div class="mission-card">
-                <div class="icon-container" style="background: linear-gradient(135deg, #10b981, #059669);">
-                    <i class="fas fa-lock"></i>
+        <!-- Sección Para Socios -->
+        <h2 class="section-title">Beneficios por Tipo de Socio</h2>
+        <div class="partners-grid">
+            <div class="partner-card investor">
+                <div class="partner-icon">
+                    <i class="fas fa-chart-line"></i>
                 </div>
-                <h2>Para Inversores</h2>
-                <p><strong>Retorno sobre ventas con mínimo riesgo:</strong><br>
-                • Tus fondos en nuestras cuentas verificadas<br>
-                • Cero riesgo de suspensiones de cuentas<br>
-                • Reportes financieros transparentes<br>
-                • Diversificación automática</p>
+                <h3>Para Inversores</h3>
+                <ul>
+                    <li>Retorno sobre ventas con mínimo riesgo</li>
+                    <li>Tus fondos en nuestras cuentas verificadas</li>
+                    <li>Cero riesgo de suspensiones de cuentas</li>
+                    <li>Reportes financieros transparentes</li>
+                    <li>Diversificación automática</li>
+                </ul>
             </div>
             
-            <div class="vision-card">
-                <div class="icon-container" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+            <div class="partner-card supplier">
+                <div class="partner-icon">
                     <i class="fas fa-boxes"></i>
                 </div>
-                <h2>Para Proveedores</h2>
-                <p><strong>Expansión sin complicaciones:</strong><br>
-                • Vendemos tus productos sin que gestiones marketplaces<br>
-                • Pagos garantizados y puntuales<br>
-                • Crecimiento de mercado orgánico<br>
-                • Enfoque en lo que mejor haces: producir</p>
+                <h3>Para Proveedores</h3>
+                <ul>
+                    <li>Expansión sin complicaciones</li>
+                    <li>Vendemos tus productos sin que gestiones marketplaces</li>
+                    <li>Pagos garantizados y puntuales</li>
+                    <li>Crecimiento de mercado orgánico</li>
+                    <li>Enfoque en lo que mejor haces: producir</li>
+                </ul>
             </div>
         </div>
         
-        <!-- Equipo REFORZADO -->
+        <!-- Equipo -->
         <div class="team-section">
             <h2 class="section-title">El Equipo que Opera Nuestras Cuentas</h2>
             <div class="team-grid">
@@ -202,7 +838,7 @@
                     <h3>Andres E. Ventura</h3>
                     <p class="member-role">CEO & Fundador</p>
                     <p class="member-bio">Especialista en e-commerce con más de 5 años operando <strong>cuentas propias</strong> en Amazon FBM y eBay multi-cuenta. Creador del modelo de revenue sharing que beneficia a todos los socios.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 8px;">
+                    <div class="team-philosophy">
                         <strong>Filosofía:</strong> "Crecemos juntos o no crecemos"
                     </div>
                 </div>
@@ -214,7 +850,7 @@
                     <h3>Equipo de Operaciones</h3>
                     <p class="member-role">Gestión de Nuestras Cuentas</p>
                     <p class="member-bio">Expertos en listing optimization, PPC estratégico y cumplimiento de políticas. Gestionan <strong>nuestras cuentas verificadas</strong> con máxima eficiencia y transparencia.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: #fff7ed; border-radius: 8px;">
+                    <div class="team-philosophy">
                         <strong>Métrica clave:</strong> 0 suspensiones de cuentas
                     </div>
                 </div>
@@ -226,14 +862,14 @@
                     <h3>Equipo de Partnerships</h3>
                     <p class="member-role">Relación con Socios</p>
                     <p class="member-bio">Dedicados a crear y mantener relaciones de largo plazo con inversores, proveedores y prep centers. Tu punto de contacto para crecimiento conjunto.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 8px;">
+                    <div class="team-philosophy">
                         <strong>Compromiso:</strong> Transparencia total en reportes
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Experiencia REFORZADA -->
+        <!-- Experiencia -->
         <div class="experience-section">
             <h2>Resultados que Generan Confianza</h2>
             <p>Más de 5 años operando <strong>nuestras propias cuentas</strong> en Amazon y eBay nos han permitido perfeccionar un modelo de revenue sharing que beneficia a todos los socios.</p>
@@ -256,15 +892,13 @@
                     <p>Revenue Share</p>
                 </div>
             </div>
-            
-            <!-- NUEVO: Llamada a acción específica -->
-            <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 2px solid var(--accent-gold);">
-                <h3 style="color: var(--accent-gold); margin-bottom: 15px;">¿Listo para ser nuestro próximo socio estratégico?</h3>
-                <p style="margin-bottom: 20px; font-size: 1.1em;">Inversores, proveedores y prep centers - crecemos juntos</p>
-                <a href="contacto.html" style="display: inline-block; background: var(--accent-gold); color: var(--secondary-black); padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em;">
-                    Iniciar Partnership
-                </a>
-            </div>
+        </div>
+        
+        <!-- CTA Final -->
+        <div class="cta-partnership">
+            <h3>¿Listo para ser nuestro próximo socio estratégico?</h3>
+            <p style="font-size: 1.2em; margin-bottom: 20px; opacity: 0.9;">Inversores, proveedores y prep centers - crecemos juntos</p>
+            <a href="contacto.html" class="cta-button">Iniciar Partnership</a>
         </div>
     </div>
 
@@ -295,7 +929,7 @@
         }, observerOptions);
         
         document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.mission-card, .vision-card, .value-item, .team-member, .stat-box, .highlight-box, .model-emphasis');
+            const animatedElements = document.querySelectorAll('.mission-card, .vision-card, .value-item, .team-member, .stat-box, .highlight-box, .model-emphasis, .partner-card, .cta-partnership');
             
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
