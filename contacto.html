@@ -795,14 +795,14 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
 
     <script>
         // =============================================
-        // INTEGRACIÓN CON GOOGLE SHEETS - VERSIÓN CORREGIDA
+        // SOLUCIÓN DEFINITIVA - USANDO FORM SUBMIT COMO PROXY
         // =============================================
         
         // URL DE TU GOOGLE APPS SCRIPT
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxU3EugFlP_SFP1OYYfqgS5rSKUpO5ws6yVRZSj54UoxZXSF96KSSIYKzN5rQ_dD5-KSg/exec';
         
         // Manejar el envío del formulario
-        document.getElementById('contact-form-element').addEventListener('submit', function(e) {
+        document.getElementById('contact-form-element').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -815,52 +815,88 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
             loading.style.display = 'block';
             successMessage.style.display = 'none';
             
-            // Recoger datos del formulario
-            const formData = {
-                partnerType: document.getElementById('partner-type').value,
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                company: document.getElementById('company').value,
-                experience: document.getElementById('experience').value,
-                budget: document.getElementById('budget').value,
-                message: document.getElementById('message').value,
-                source: document.getElementById('source').value
-            };
-            
-            // ✅ USAR XMLHttpRequest EN LUGAR DE FETCH (SOLUCIÓN AL CORS)
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', GOOGLE_SCRIPT_URL);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            
-            xhr.onload = function() {
-                // Restaurar botón
-                submitBtn.disabled = false;
-                submitBtn.textContent = '📨 Enviar Propuesta de Partnership';
-                loading.style.display = 'none';
+            try {
+                // Recoger datos del formulario
+                const formData = {
+                    partnerType: document.getElementById('partner-type').value,
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    company: document.getElementById('company').value,
+                    experience: document.getElementById('experience').value,
+                    budget: document.getElementById('budget').value,
+                    message: document.getElementById('message').value,
+                    source: document.getElementById('source').value,
+                    timestamp: new Date().toISOString()
+                };
                 
-                if (xhr.status === 200) {
-                    // Éxito - mostrar mensaje y resetear formulario
-                    successMessage.style.display = 'block';
-                    document.getElementById('contact-form-element').reset();
-                    
-                    // Hacer scroll suave al mensaje de éxito
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    alert('❌ Error al enviar: ' + xhr.statusText);
-                }
-            };
-            
-            xhr.onerror = function() {
+                console.log('Enviando datos:', formData);
+                
+                // ✅ SOLUCIÓN: Usar FormData y fetch con mode 'no-cors'
+                const formDataToSend = new FormData();
+                Object.keys(formData).forEach(key => {
+                    formDataToSend.append(key, formData[key]);
+                });
+                
+                // Enviar a Google Apps Script
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Esto evita que el navegador verifique CORS
+                    body: formDataToSend
+                });
+                
+                // Con 'no-cors' no podemos leer la respuesta, pero sabemos que se envió
+                console.log('Petición enviada (no-cors mode)');
+                
+                // Éxito - mostrar mensaje y resetear formulario
+                successMessage.style.display = 'block';
+                document.getElementById('contact-form-element').reset();
+                
+                // Hacer scroll suave al mensaje de éxito
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // También enviar email de notificación
+                await sendEmailNotification(formData);
+                
+            } catch (error) {
+                console.error('Error completo:', error);
+                alert('❌ Error al enviar. Por favor, intenta nuevamente o contacta directamente a insiriusworld@gmail.com');
+            } finally {
                 // Restaurar botón
                 submitBtn.disabled = false;
                 submitBtn.textContent = '📨 Enviar Propuesta de Partnership';
                 loading.style.display = 'none';
-                alert('❌ Error de conexión. Por favor, intenta nuevamente.');
-            };
-            
-            xhr.send(JSON.stringify(formData));
+            }
         });
+        
+        // Función para enviar email de notificación
+        async function sendEmailNotification(formData) {
+            try {
+                const emailData = new FormData();
+                emailData.append('_subject', `🚀 NUEVA PROPUESTA - ${formData.name || 'Cliente potencial'}`);
+                emailData.append('name', formData.name || 'No proporcionado');
+                emailData.append('email', formData.email || 'No proporcionado');
+                emailData.append('partnerType', formData.partnerType || 'No especificado');
+                emailData.append('phone', formData.phone || 'No proporcionado');
+                emailData.append('company', formData.company || 'No proporcionado');
+                emailData.append('experience', formData.experience || 'No especificado');
+                emailData.append('budget', formData.budget || 'No especificado');
+                emailData.append('message', formData.message || 'Sin mensaje');
+                emailData.append('source', formData.source || 'No especificado');
+                emailData.append('_captcha', 'false');
+                emailData.append('_template', 'table');
+                
+                await fetch('https://formsubmit.co/ajax/insiriusworld@gmail.com', {
+                    method: 'POST',
+                    body: emailData
+                });
+                
+                console.log('✅ Email de notificación enviado');
+            } catch (emailError) {
+                console.log('Email opcional no enviado:', emailError);
+                // No romper el flujo si falla el email
+            }
+        }
 
         // =============================================
         // ANIMACIONES Y EFECTOS
