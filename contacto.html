@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- AGREGAR ESTAS META ETIQUETAS PARA EVITAR CACHE -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -835,7 +834,8 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     experience: document.getElementById('experience').value,
                     budget: document.getElementById('budget').value,
                     message: document.getElementById('message').value,
-                    source: document.getElementById('source').value
+                    source: document.getElementById('source').value,
+                    timestamp: new Date().toISOString()
                 };
                 
                 console.log('📤 Enviando datos SOLO a Google Sheets:', formData);
@@ -849,11 +849,14 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     body: JSON.stringify(formData)
                 });
                 
+                console.log('📨 Respuesta recibida:', response);
+                
                 if (!response.ok) {
-                    throw new Error(`Error HTTP: ${response.status}`);
+                    throw new Error(`Error HTTP: ${response.status} - ${response.statusText}`);
                 }
                 
                 const result = await response.json();
+                console.log('📊 Resultado de Google Sheets:', result);
                 
                 if (result.result === 'success') {
                     // Éxito - mostrar mensaje y resetear formulario
@@ -865,11 +868,12 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     
                     console.log('✅ Datos guardados SOLO en Google Sheets correctamente');
                 } else {
-                    throw new Error(result.message);
+                    throw new Error(result.message || 'Error desconocido de Google Sheets');
                 }
                 
             } catch (error) {
-                console.error('❌ Error al conectar con Google Sheets:', error);
+                console.error('❌ Error detallado al conectar con Google Sheets:', error);
+                errorMessage.textContent = `❌ Error: ${error.message}. Por favor, intenta nuevamente o contacta directamente a insiriusworld@gmail.com`;
                 errorMessage.style.display = 'block';
                 errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } finally {
