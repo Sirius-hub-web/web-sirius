@@ -187,7 +187,7 @@
             border-radius: 2px;
         }
 
-        /* Contact Grid - Estilo coherente */
+        /* Contact Grid - Solución profesional real */
         .contact-section {
             padding: 100px 0;
             background: var(--white);
@@ -195,8 +195,8 @@
         
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
         
         .contact-info {
@@ -239,7 +239,7 @@
             background: linear-gradient(90deg, var(--accent-gold), var(--primary-blue));
         }
 
-        /* Info Cards - Estilo coherente con opportunities */
+        /* Info Cards - Estilo profesional */
         .info-cards {
             display: grid;
             gap: 30px;
@@ -268,10 +268,13 @@
         .info-card p {
             color: #666;
             line-height: 1.6;
+            margin-bottom: 10px;
         }
         
-        .email-link {
-            display: inline-block;
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: var(--primary-blue);
             color: var(--white);
             padding: 12px 25px;
@@ -282,9 +285,10 @@
             margin-top: 10px;
         }
         
-        .email-link:hover {
+        .contact-link:hover {
             background: var(--accent-gold);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
         }
 
         /* Form Styles */
@@ -339,7 +343,7 @@
             box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
         }
 
-        /* Partnership Types - Estilo coherente */
+        /* Partnership Types */
         .partnership-types {
             padding: 80px 0;
             background: var(--light-bg);
@@ -561,42 +565,46 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - SOLUCIÓN 100% REAL -->
     <div class="contact-section">
         <div class="container">
             <h2 class="section-title">Conectemos para Crecer Juntos</h2>
             <div class="contact-grid">
-                <!-- Información de Contacto -->
+                <!-- Información de Contacto REAL -->
                 <div class="contact-info">
-                    <h2 style="color: var(--primary-blue); margin-bottom: 30px; font-size: 1.8em;">Nuestros Canales</h2>
+                    <h2 style="color: var(--primary-blue); margin-bottom: 30px; font-size: 1.8em;">Nuestros Canales de Contacto</h2>
                     
                     <div class="info-cards">
                         <div class="info-card">
-                            <h3>📧 Comunicación Principal</h3>
-                            <p>Para propuestas de partnership y consultas estratégicas:</p>
-                            <a href="mailto:insiriusworld@gmail.com" class="email-link">insiriusworld@gmail.com</a>
+                            <h3>📧 Comunicación Directa</h3>
+                            <p><strong>Contacto Principal:</strong></p>
+                            <p>Para propuestas de partnership y consultas estratégicas</p>
+                            <a href="mailto:insiriusworld@gmail.com" class="contact-link">
+                                ✉️ insiriusworld@gmail.com
+                            </a>
                         </div>
                         
                         <div class="info-card">
-                            <h3>💬 Respuesta Rápida</h3>
-                            <p>Respondemos en menos de 24 horas. Valoramos cada oportunidad de partnership.</p>
+                            <h3>💬 Respuesta Rápida Garantizada</h3>
+                            <p>Respondemos a todas las propuestas serias en <strong>menos de 24 horas</strong>. Valoramos cada oportunidad de partnership.</p>
                         </div>
                         
                         <div class="info-card">
-                            <h3>🌍 Alcance Global</h3>
-                            <p>Trabajamos con socios en todo el mundo. No importa tu ubicación, lo que importa es el potencial de crecimiento conjunto.</p>
+                            <h3>🌍 Alcance Global - Operación Remota</h3>
+                            <p>Nuestro modelo está optimizado para operaciones 100% remotas. Trabajamos eficientemente con socios en cualquier ubicación.</p>
+                            <p><strong>Enfoque digital, resultados globales</strong></p>
                         </div>
                     </div>
                     
                     <div style="background: linear-gradient(135deg, var(--primary-blue), #1e40af); color: white; padding: 25px; border-radius: 10px; text-align: center;">
                         <h3 style="margin-bottom: 15px; color: var(--accent-gold);">🚀 Proceso de Partnership</h3>
-                        <p style="margin: 0; opacity: 0.9;">1. Evaluación → 2. Propuesta → 3. Acuerdo → 4. Crecimiento</p>
+                        <p style="margin: 0; opacity: 0.9;">1. Evaluación → 2. Propuesta → 3. Acuerdo → 4. Crecimiento Conjunto</p>
                     </div>
                 </div>
 
                 <!-- Formulario de Contacto -->
                 <div class="contact-form" id="contact-form">
-                    <h2 style="color: var(--primary-blue); margin-bottom: 30px; font-size: 1.8em;">Cuéntanos Sobre Ti</h2>
+                    <h2 style="color: var(--primary-blue); margin-bottom: 30px; font-size: 1.8em;">Cuéntanos Sobre Tu Propuesta</h2>
                     
                     <form action="https://formsubmit.co/insiriusworld@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="Nueva Propuesta de Partnership - Sirius USA">
@@ -636,8 +644,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Cuéntanos sobre tu propuesta *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Ej: Tengo capital para invertir en escalamiento de cuentas Amazon...&#10;Ej: Somos proveedores de productos electrónicos buscando nuevos canales...&#10;Ej: Operamos un prep center en Florida con capacidad para 500 órdenes/día..."></textarea>
+                            <label for="message">Describe tu propuesta de partnership *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Ej: Tengo capital para invertir en escalamiento de cuentas Amazon...&#10;Ej: Somos proveedores de productos electrónicos buscando nuevos canales...&#10;Ej: Operamos un prep center con capacidad para X órdenes/día..."></textarea>
                         </div>
                         
                         <button type="submit" class="submit-button">Enviar Propuesta de Partnership</button>
@@ -673,29 +681,29 @@
         </div>
     </div>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Enfocado en comunicación digital -->
     <div class="faq-section">
         <div class="container">
             <h2 class="section-title">Preguntas Frecuentes</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>¿Cuál es el tiempo de respuesta?</h3>
-                    <p>Respondemos a todas las propuestas serias en menos de 24 horas. Valoramos tu tiempo y el nuestro.</p>
+                    <p>Respondemos a todas las propuestas serias en <strong>menos de 24 horas</strong> vía email. Valoramos tu tiempo y el nuestro.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>¿Requieren un mínimo de inversión?</h3>
-                    <p>Evaluamos cada propuesta individualmente. Lo importante es el potencial de crecimiento a largo plazo.</p>
+                    <h3>¿Cómo manejamos la comunicación?</h3>
+                    <p>100% digital y eficiente. Usamos email para documentación importante y estamos disponibles para videollamadas cuando sea necesario.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>¿Cómo protegen mi inversión/productos?</h3>
+                    <h3>¿Protegen mi inversión/productos?</h3>
                     <p>Operamos con <strong>nuestras cuentas verificadas</strong>, eliminando riesgos de suspensiones. Reportes transparentes y comunicación constante.</p>
                 </div>
                 
                 <div class="faq-item">
                     <h3>¿Trabajan con socios internacionales?</h3>
-                    <p>Absolutamente. El e-commerce es global y nosotros también. No importa tu ubicación geográfica.</p>
+                    <p>Absolutamente. El e-commerce es global y nosotros también. No importa tu ubicación geográfica - lo que importa es el potencial.</p>
                 </div>
             </div>
         </div>
@@ -712,7 +720,7 @@
         </div>
     </div>
 
-    <!-- Footer IDÉNTICO al index -->
+    <!-- Footer ACTUALIZADO -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
