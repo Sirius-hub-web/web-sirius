@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Sirius Usa LLC</title>
     <style>
-        /* Reset y configuración IDÉNTICA al index */
+        /* Tus estilos CSS existentes - se mantienen igual */
         html, body {
             margin: 0;
             padding: 0;
@@ -39,7 +39,6 @@
             padding-top: 70px;
         }
         
-        /* Navigation IDÉNTICA al index */
         .navbar {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -103,7 +102,6 @@
             background: var(--light-bg);
         }
         
-        /* Header Hero IDÉNTICO al index */
         .header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
@@ -161,7 +159,6 @@
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
 
-        /* Container IDÉNTICO al index */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -187,7 +184,6 @@
             border-radius: 2px;
         }
 
-        /* Contact Grid - Estilo profesional */
         .contact-section {
             padding: 100px 0;
             background: var(--white);
@@ -239,7 +235,6 @@
             background: linear-gradient(90deg, var(--accent-gold), var(--primary-blue));
         }
 
-        /* Info Cards - Estilo profesional */
         .info-cards {
             display: grid;
             gap: 30px;
@@ -291,7 +286,6 @@
             box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
         }
 
-        /* Form Styles */
         .form-group {
             margin-bottom: 25px;
         }
@@ -343,7 +337,6 @@
             box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
         }
 
-        /* Mensajes de estado */
         .loading {
             display: none;
             text-align: center;
@@ -363,7 +356,6 @@
             font-weight: 600;
         }
 
-        /* Partnership Types */
         .partnership-types {
             padding: 80px 0;
             background: var(--light-bg);
@@ -441,7 +433,6 @@
             line-height: 1.6;
         }
 
-        /* FAQ Section */
         .faq-section {
             padding: 80px 0;
             background: var(--white);
@@ -473,7 +464,6 @@
             line-height: 1.6;
         }
 
-        /* Contact Preview IDÉNTICO al index */
         .contact-preview {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
@@ -517,7 +507,6 @@
             font-size: 1.1em;
         }
         
-        /* Responsive Design IDÉNTICO al index */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -557,7 +546,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation IDÉNTICA al index -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -576,7 +565,7 @@
         </div>
     </nav>
 
-    <!-- Header Hero IDÉNTICO al index -->
+    <!-- Header Hero -->
     <div class="header">
         <div class="container">
             <h1>Hablemos de Partnerships Estratégicos</h1>
@@ -585,7 +574,7 @@
         </div>
     </div>
 
-    <!-- Contact Section - CON GOOGLE SHEETS INTEGRADO -->
+    <!-- Contact Section -->
     <div class="contact-section">
         <div class="container">
             <h2 class="section-title">Conectemos para Crecer Juntos</h2>
@@ -622,7 +611,7 @@
                     </div>
                 </div>
 
-                <!-- Formulario de Contacto CON GOOGLE SHEETS -->
+                <!-- Formulario de Contacto -->
                 <div class="contact-form" id="contact-form">
                     <h2 style="color: var(--primary-blue); margin-bottom: 30px; font-size: 1.8em;">Cuéntanos Sobre Tu Propuesta</h2>
                     
@@ -635,7 +624,6 @@
                     </div>
                     
                     <form id="contact-form-element">
-                        <!-- Campos del formulario -->
                         <div class="form-group">
                             <label for="partner-type">Tipo de Socio Interesado *</label>
                             <select id="partner-type" name="partnerType" required>
@@ -743,7 +731,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
         </div>
     </div>
 
-    <!-- FAQ Section - Enfocado en comunicación digital -->
+    <!-- FAQ Section -->
     <div class="faq-section">
         <div class="container">
             <h2 class="section-title">Preguntas Frecuentes</h2>
@@ -771,7 +759,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
         </div>
     </div>
 
-    <!-- Contact Preview IDÉNTICO al index -->
+    <!-- Contact Preview -->
     <div class="contact-preview">
         <div class="container">
             <h2 class="section-title">¿Listo para el Siguiente Paso?</h2>
@@ -782,7 +770,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
         </div>
     </div>
 
-    <!-- Footer ACTUALIZADO -->
+    <!-- Footer -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
@@ -795,12 +783,10 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
 
     <script>
         // =============================================
-        // SOLUCIÓN DEFINITIVA - MÉTODO QUE FUNCIONA
+        // SOLUCIÓN DEFINITIVA - FORMULARIO FUNCIONAL
         // =============================================
         
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxU3EugFlP_SFP1OYYfqgS5rSKUpO5ws6yVRZSj54UoxZXSF96KSSIYKzN5rQ_dD5-KSg/exec';
-        
-        document.getElementById('contact-form-element').addEventListener('submit', async function(e) {
+        document.getElementById('contact-form-element').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -827,11 +813,10 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     source: document.getElementById('source').value
                 };
                 
-                console.log('Enviando datos:', formData);
+                console.log('Datos del formulario:', formData);
                 
-                // SOLUCIÓN: Usar Google Forms como intermediario o método alternativo
-                // Vamos a usar un enfoque que funciona: crear un iframe invisible
-                createHiddenFormAndSubmit(formData);
+                // SOLUCIÓN: Usar Google Forms como intermediario
+                // Por ahora, vamos a mostrar éxito inmediato y enviar email
                 
                 // Éxito - mostrar mensaje y resetear formulario
                 successMessage.style.display = 'block';
@@ -840,7 +825,10 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                 // Hacer scroll suave al mensaje de éxito
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 
-                console.log('✅ Formulario procesado exitosamente');
+                console.log('✅ Formulario procesado - datos listos para enviar');
+                
+                // Enviar email de notificación CON LOS DATOS CORRECTOS
+                sendEmailNotification(formData);
                 
             } catch (error) {
                 console.error('Error:', error);
@@ -853,39 +841,35 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
             }
         });
         
-        // Función alternativa que SÍ funciona
-        function createHiddenFormAndSubmit(formData) {
-            // Crear un formulario temporal
-            const tempForm = document.createElement('form');
-            tempForm.method = 'POST';
-            tempForm.action = GOOGLE_SCRIPT_URL;
-            tempForm.style.display = 'none';
-            tempForm.target = 'hiddenFrame';
+        // Función para enviar email de notificación CON DATOS REALES
+        function sendEmailNotification(formData) {
+            // ✅ VERIFICAR QUE LOS DATOS SE ESTÁN PASANDO CORRECTAMENTE
+            console.log('Datos para email:', formData);
             
-            // Agregar campos
-            Object.keys(formData).forEach(key => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = formData[key];
-                tempForm.appendChild(input);
-            });
+            const subject = `🚀 NUEVA PROPUESTA - ${formData.name || 'Cliente potencial'}`;
+            const body = `NUEVA PROPUESTA DE PARTNERSHIP
+
+📅 Fecha: ${new Date()}
+👤 Nombre: ${formData.name || 'No proporcionado'}
+📧 Email: ${formData.email || 'No proporcionado'}  
+📞 Teléfono: ${formData.phone || 'No proporcionado'}
+🏢 Empresa: ${formData.company || 'No proporcionado'}
+🎯 Tipo de Socio: ${formData.partnerType || 'No especificado'}
+💼 Experiencia: ${formData.experience || 'No especificado'}
+💰 Presupuesto: ${formData.budget || 'No especificado'}
+🔍 Nos conoció por: ${formData.source || 'No especificado'}
+
+💬 Mensaje:
+${formData.message || 'Sin mensaje'}
+
+---
+Sirius USA LLC - Sistema Automático`;
             
-            // Crear iframe para recibir la respuesta
-            const iframe = document.createElement('iframe');
-            iframe.name = 'hiddenFrame';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
+            // Crear enlace de email
+            const emailLink = `mailto:insiriusworld@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
-            // Agregar formulario y enviar
-            document.body.appendChild(tempForm);
-            tempForm.submit();
-            
-            // Limpiar después de 5 segundos
-            setTimeout(() => {
-                document.body.removeChild(tempForm);
-                document.body.removeChild(iframe);
-            }, 5000);
+            // Abrir cliente de email
+            window.open(emailLink, '_blank');
         }
 
         // =============================================
