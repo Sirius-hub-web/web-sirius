@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eBay - Socio Estratégico | Sirius Usa LLC</title>
     <style>
-        /* Reutilizar estilos base */
+        /* MISMO ESTILO EXACTO QUE AMAZON */
         html, body {
             margin: 0;
             padding: 0;
@@ -25,9 +25,6 @@
             --secondary-black: #000000;
             --accent-gold: #f59e0b;
             --ebay-blue: #0064d2;
-            --ebay-red: #e53238;
-            --ebay-green: #86b817;
-            --ebay-yellow: #f5af02;
             --light-bg: #f8f9fa;
             --white: #ffffff;
             --success-green: #10b981;
@@ -41,7 +38,7 @@
             padding-top: 70px;
         }
         
-        /* Navigation */
+        /* Navigation - MISMO QUE AMAZON */
         .navbar {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -110,7 +107,7 @@
             background: var(--light-bg);
         }
         
-        /* Header Específico para eBay - REDISEÑADO */
+        /* Header - MISMO ESTILO QUE AMAZON */
         .ebay-header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
             color: var(--white);
@@ -193,7 +190,7 @@
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
         
-        /* Partnership Model Section - NUEVA */
+        /* Partnership Model Section - EXACTA A AMAZON */
         .partnership-model {
             padding: 100px 0;
             background: var(--white);
@@ -292,7 +289,7 @@
             font-size: 1.5em;
         }
         
-        /* Service Tabs para eBay - AJUSTADAS */
+        /* Service Tabs - MISMA ESTRUCTURA QUE AMAZON */
         .service-tabs {
             display: flex;
             justify-content: center;
@@ -338,7 +335,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Service Grid */
+        /* Service Grid - MISMA ESTRUCTURA QUE AMAZON */
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -353,22 +350,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             border-left: 4px solid var(--ebay-blue);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                var(--ebay-red), 
-                var(--ebay-blue), 
-                var(--ebay-yellow), 
-                var(--ebay-green));
         }
         
         .service-card:hover {
@@ -405,64 +386,11 @@
             font-size: 1.1em;
         }
         
-        /* eBay Features Section - AJUSTADA */
-        .ebay-features {
+        /* Process Flow Section - MISMA ESTRUCTURA QUE AMAZON */
+        .process-flow {
             background: var(--light-bg);
             padding: 80px 0;
             margin-top: 60px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        
-        .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .feature-item h4 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        
-        /* International Section - AJUSTADA */
-        .international {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--ebay-blue), #1e40af);
-            color: var(--white);
-        }
-        
-        .countries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .country-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Process Flow Section - NUEVA */
-        .process-flow {
-            background: var(--white);
-            padding: 80px 0;
         }
         
         .flow-steps {
@@ -475,7 +403,7 @@
         .flow-step {
             text-align: center;
             padding: 30px 20px;
-            background: var(--light-bg);
+            background: var(--white);
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             position: relative;
@@ -501,7 +429,37 @@
             font-size: 1.2em;
         }
         
-        /* CTA Section - NUEVA */
+        /* Benefits Section - MISMA ESTRUCTURA QUE AMAZON */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--ebay-blue);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section - MISMA ESTRUCTURA QUE AMAZON */
         .cta-section {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-black));
@@ -535,7 +493,7 @@
             margin-top: 80px;
         }
         
-        /* Responsive */
+        /* Responsive - MISMO QUE AMAZON */
         @media (max-width: 768px) {
             .service-tabs {
                 flex-direction: column;
@@ -551,32 +509,22 @@
                 grid-template-columns: 1fr;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .countries-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .model-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .flow-steps {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .countries-grid {
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - MISMA ESTRUCTURA QUE AMAZON -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -595,16 +543,16 @@
         </div>
     </nav>
 
-    <!-- eBay Header - REDISEÑADO -->
+    <!-- eBay Header - MISMO ENFOQUE QUE AMAZON -->
     <div class="ebay-header">
         <div class="container">
             <h1>Socio Estratégico en eBay</h1>
-            <p>Operamos con <strong>nuestras cuentas eBay verificadas</strong>. Tú participas en las ganancias sin riesgos de suspensiones. Sistema multi-cuenta especializado en ventas nacionales e internacionales.</p>
+            <p>Operamos con <strong>nuestras cuentas eBay verificadas</strong>. Tú participas en las ganancias sin riesgos de suspensiones. Sistema especializado en multi-cuenta con integración de prep centers.</p>
             <a href="contacto.html" class="cta-button">Explorar Asociación en eBay</a>
         </div>
     </div>
 
-    <!-- Partnership Model Section - NUEVA SECCIÓN -->
+    <!-- Partnership Model Section - EXACTA A AMAZON -->
     <div class="partnership-model">
         <div class="container">
             <h2 class="section-title">Modelo de Asociación en eBay</h2>
@@ -651,15 +599,15 @@
         </div>
     </div>
 
-    <!-- Service Tabs - AJUSTADAS -->
+    <!-- Service Tabs - MISMA ESTRUCTURA QUE AMAZON -->
     <div class="container" style="padding: 80px 20px;">
         <div class="service-tabs">
             <button class="tab-button active" onclick="openTab('modelo')">Modelo Multi-Cuenta</button>
-            <button class="tab-button" onclick="openTab('internacional')">Ventas Internacionales</button>
+            <button class="tab-button" onclick="openTab('analisis')">Análisis de Productos</button>
             <button class="tab-button" onclick="openTab('cumplimiento')">Cumplimiento eBay</button>
         </div>
 
-        <!-- Modelo Multi-Cuenta Tab - AJUSTADA -->
+        <!-- Modelo Multi-Cuenta Tab - MISMA ESTRUCTURA QUE AMAZON -->
         <div id="modelo" class="tab-content active">
             <h2 class="section-title">Operamos con Nuestras Cuentas eBay</h2>
             <div class="service-grid">
@@ -699,47 +647,47 @@
             </div>
         </div>
 
-        <!-- Ventas Internacionales Tab - AJUSTADA -->
-        <div id="internacional" class="tab-content">
-            <h2 class="section-title">Expansión Global con Nuestras Cuentas</h2>
+        <!-- Análisis de Productos Tab - MISMA ESTRUCTURA QUE AMAZON -->
+        <div id="analisis" class="tab-content">
+            <h2 class="section-title">Análisis para Maximizar Ganancias</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <h3>Global Shipping Program</h3>
-                    <p>Gestión completa del programa de envíos internacionales desde <strong>nuestras cuentas</strong>.</p>
+                    <h3>Investigación de Mercado</h3>
+                    <p>Identificación de oportunidades con alto margen para <strong>nuestras cuentas eBay</strong>.</p>
                     <ul class="feature-list">
-                        <li>Configuración GSP completa</li>
-                        <li>Gestión de aduanas e impuestos</li>
-                        <li>Documentación internacional</li>
-                        <li>Seguimiento global</li>
-                        <li>Soporte multi-idioma</li>
+                        <li>Análisis de tendencias de mercado</li>
+                        <li>Identificación de nichos rentables</li>
+                        <li>Evaluación de competencia</li>
+                        <li>Análisis de estacionalidad</li>
+                        <li>Predicción de demanda</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Estrategia Multi-Mercado</h3>
-                    <p>Expansión a mercados internacionales con <strong>nuestras cuentas eBay</strong>.</p>
+                    <h3>Análisis de Rentabilidad</h3>
+                    <p>Cálculo preciso de márgenes para <strong>maximizar ganancias compartidas</strong>.</p>
                     <ul class="feature-list">
-                        <li>Expansión a mercados europeos</li>
-                        <li>Localización de listings</li>
-                        <li>Gestión de divisas</li>
-                        <li>Compliance internacional</li>
-                        <li>Análisis de mercados globales</li>
+                        <li>Cálculo de ROI por producto</li>
+                        <li>Análisis de fees de eBay</li>
+                        <li>Optimización de costos de envío</li>
+                        <li>Proyección de rentabilidad</li>
+                        <li>Análisis de punto de equilibrio</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Optimización Internacional</h3>
-                    <p>Estrategias para maximizar ventas en mercados globales.</p>
+                    <h3>Optimización de Precios</h3>
+                    <p>Estrategias dinámicas para maximizar conversiones y margen.</p>
                     <ul class="feature-list">
-                        <li>Análisis de tendencias por país</li>
-                        <li>Optimización de precios internacionales</li>
-                        <li>Gestión de envíos cross-border</li>
-                        <li>Adaptación cultural de listings</li>
-                        <li>Manejo de zonas horarias</li>
+                        <li>Análisis de precios de competencia</li>
+                        <li>Estrategias de pricing dinámico</li>
+                        <li>Optimización para mejores posiciones</li>
+                        <li>Segmentación por mercado</li>
+                        <li>Monitorización en tiempo real</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Cumplimiento eBay Tab - AJUSTADA -->
+        <!-- Cumplimiento eBay Tab - MISMA ESTRUCTURA QUE AMAZON -->
         <div id="cumplimiento" class="tab-content">
             <h2 class="section-title">Cumplimiento Garantizado en eBay</h2>
             <div class="service-grid">
@@ -780,7 +728,7 @@
         </div>
     </div>
 
-    <!-- Process Flow Section - NUEVA -->
+    <!-- Process Flow Section - MISMA ESTRUCTURA QUE AMAZON -->
     <div class="process-flow">
         <div class="container">
             <h2 class="section-title">Nuestro Flujo en eBay</h2>
@@ -814,72 +762,31 @@
         </div>
     </div>
 
-    <!-- eBay Features Section - AJUSTADA -->
-    <div class="ebay-features">
+    <!-- Benefits Section - MISMA ESTRUCTURA QUE AMAZON -->
+    <div class="benefits">
         <div class="container">
             <h2 class="section-title">Ventajas para Nuestros Socios</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🌎</div>
-                    <h4>Alcance Global</h4>
-                    <p>Acceso a mercados internacionales con el Global Shipping Program desde <strong>nuestras cuentas</strong></p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Análisis Data-Driven</h3>
+                    <p>Decisiones basadas en datos reales de mercado para <strong>maximizar ganancias compartidas</strong>.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💰</div>
-                    <h4>Menos Competencia</h4>
-                    <p>Mercado menos saturado que Amazon con <strong>mejores márgenes para socios</strong></p>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Cumplimiento Garantizado</h3>
+                    <p>100% de cumplimiento con políticas de eBay. <strong>Cuentas propias verificadas</strong>.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h4>Flexibilidad</h4>
-                    <p>Múltiples modelos de negocio: auctions, fixed price, offers en <strong>nuestras cuentas</strong></p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>Protección al Vendedor</h4>
-                    <p>Sistema robusto de protección contra fraudes en <strong>nuestras cuentas verificadas</strong></p>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Escalabilidad</h3>
+                    <p>Sistema diseñado para crecer rápidamente sin comprometer calidad ni cumplimiento.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- International Markets Section - AJUSTADA -->
-    <div class="international">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Mercados Internacionales</h2>
-            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2em; opacity: 0.9;">
-                Operamos con <strong>nuestras cuentas</strong> en los principales marketplaces de eBay a nivel global
-            </p>
-            <div class="countries-grid">
-                <div class="country-item">
-                    <h4>🇺🇸 USA</h4>
-                    <p>eBay.com - Mercado principal</p>
-                </div>
-                <div class="country-item">
-                    <h4>🇬🇧 UK</h4>
-                    <p>eBay.co.uk - Mercado europeo clave</p>
-                </div>
-                <div class="country-item">
-                    <h4>🇩🇪 Alemania</h4>
-                    <p>eBay.de - Mayor mercado de Europa</p>
-                </div>
-                <div class="country-item">
-                    <h4>🇦🇺 Australia</h4>
-                    <p>eBay.com.au - Mercado en crecimiento</p>
-                </div>
-                <div class="country-item">
-                    <h4>🇨🇦 Canadá</h4>
-                    <p>eBay.ca - Mercado norteamericano</p>
-                </div>
-                <div class="country-item">
-                    <h4>🇪🇸 España</h4>
-                    <p>eBay.es - Mercado mediterráneo</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section - NUEVA -->
+    <!-- CTA Section - MISMA ESTRUCTURA QUE AMAZON -->
     <div class="cta-section">
         <div class="container">
             <h2 class="section-title">¿Listo para Ser Nuestro Socio en eBay?</h2>
@@ -891,7 +798,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer - MISMA ESTRUCTURA QUE AMAZON -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
@@ -951,7 +858,7 @@
         }, observerOptions);
 
         // Observar elementos para animación
-        document.querySelectorAll('.service-card, .feature-item, .model-card, .flow-step, .country-item').forEach(el => {
+        document.querySelectorAll('.service-card, .flow-step, .benefit-card, .model-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
