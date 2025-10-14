@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Amazon - Sirius Usa LLC</title>
+    <title>Dropshipping Amazon FBM - Sirius Usa LLC</title>
     <style>
         /* Reutilizar los mismos estilos del Home */
         html, body {
@@ -240,59 +240,77 @@
             font-size: 1.1em;
         }
         
-        /* Comparison Section */
-        .comparison {
+        /* Process Flow Section */
+        .process-flow {
             background: var(--light-bg);
             padding: 80px 0;
             margin-top: 60px;
         }
         
-        .comparison-grid {
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .flow-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .flow-step-number {
+            background: var(--amazon-orange);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .flow-step h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
         
-        .comparison-card {
-            padding: 40px 30px;
-            border-radius: 15px;
+        .benefit-card {
             text-align: center;
-            color: var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .fbm-card {
-            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
-        }
-        
-        .fba-card {
-            background: linear-gradient(135deg, var(--amazon-orange), #ffac33);
-        }
-        
-        .comparison-card h3 {
-            font-size: 1.8em;
+        .benefit-icon {
+            font-size: 3em;
             margin-bottom: 20px;
+            color: var(--amazon-orange);
         }
         
-        .comparison-features {
-            list-style: none;
-            text-align: left;
-            margin-top: 25px;
-        }
-        
-        .comparison-features li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .comparison-features li:before {
-            content: "•";
-            color: var(--accent-gold);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.2em;
+        .benefit-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
         }
         
         .footer {
@@ -319,7 +337,11 @@
                 grid-template-columns: 1fr;
             }
             
-            .comparison-grid {
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -327,7 +349,6 @@
 </head>
 <body>
     <!-- Navigation -->
-   <!-- Navigation CORREGIDA -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -349,9 +370,9 @@
     <!-- Amazon Header -->
     <div class="amazon-header">
         <div class="container">
-            <h1>Servicios Amazon</h1>
+            <h1>Dropshipping Especializado en Amazon FBM</h1>
             <p style="font-size: 1.3em; max-width: 600px; margin: 0 auto; opacity: 0.9;">
-                Soluciones completas para Amazon FBM, FBA y Wholesale. Maximizamos tu presencia en la plataforma más grande de ecommerce.
+                Publicamos tus productos en Amazon FBM, gestionamos proveedores globales y coordinamos prep centers para un fulfillment perfecto.
             </p>
         </div>
     </div>
@@ -359,160 +380,185 @@
     <!-- Service Tabs -->
     <div class="container" style="padding: 80px 20px;">
         <div class="service-tabs">
-            <button class="tab-button active" onclick="openTab('fbm')">Amazon FBM</button>
-            <button class="tab-button" onclick="openTab('fba')">Amazon FBA</button>
-            <button class="tab-button" onclick="openTab('wholesale')">Amazon Wholesale</button>
+            <button class="tab-button active" onclick="openTab('dropshipping')">Dropshipping FBM</button>
+            <button class="tab-button" onclick="openTab('analisis')">Análisis de Productos</button>
+            <button class="tab-button" onclick="openTab('cumplimiento')">Cumplimiento Amazon</button>
         </div>
 
-        <!-- FBM Tab -->
-        <div id="fbm" class="tab-content active">
-            <h2 class="section-title">Amazon FBM (Fulfillment by Merchant)</h2>
+        <!-- Dropshipping FBM Tab -->
+        <div id="dropshipping" class="tab-content active">
+            <h2 class="section-title">Dropshipping Profesional en Amazon FBM</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <h3>Gestión Completa FBM</h3>
-                    <p>Manejo integral de operaciones FBM desde la recepción de órdenes hasta el envío al cliente final.</p>
+                    <h3>Gestión Completa de Listings</h3>
+                    <p>Publicación y optimización profesional de productos en Amazon FBM con estrategias comprobadas.</p>
                     <ul class="feature-list">
-                        <li>Gestión de inventario en tiempo real</li>
-                        <li>Coordinación con prep centers</li>
-                        <li>Optimización de costos de envío</li>
-                        <li>Seguimiento automatizado</li>
-                        <li>Gestión de devoluciones</li>
+                        <li>Creación de listings optimizados SEO</li>
+                        <li>Investigación de keywords rentables</li>
+                        <li>Optimización de imágenes profesionales</li>
+                        <li>Gestión de precios competitivos</li>
+                        <li>Monitorización de competencia</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Prep Center Coordination</h3>
-                    <p>Coordinación estratégica con prep centers para inspección y re-packaging profesional.</p>
+                    <h3>Coordinación con Prep Centers</h3>
+                    <p>Gestión estratégica con centros de preparación para inspección y re-empaque profesional.</p>
                     <ul class="feature-list">
                         <li>Inspección de calidad exhaustiva</li>
-                        <li>Re-packaging profesional</li>
-                        <li>Cumplimiento de políticas Amazon</li>
-                        <li>Almacenamiento temporal</li>
-                        <li>Control de inventario</li>
+                        <li>Re-packaging según políticas Amazon</li>
+                        <li>Gestión de etiquetado y códigos</li>
+                        <li>Almacenamiento temporal estratégico</li>
+                        <li>Envío directo al cliente final</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Optimización de Listings</h3>
-                    <p>Mejora continua de listings para maximizar visibilidad y conversión en Amazon.</p>
+                    <h3>Gestión de Proveedores Globales</h3>
+                    <p>Conexión con distribuidores confiables y verificación de productos compatibles con Amazon.</p>
                     <ul class="feature-list">
-                        <li>SEO avanzado para Amazon</li>
-                        <li>Optimización de imágenes profesionales</li>
-                        <li>Gestión estratégica de reviews</li>
-                        <li>Análisis de competencia</li>
-                        <li>A/B testing de listings</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- FBA Tab -->
-        <div id="fba" class="tab-content">
-            <h2 class="section-title">Amazon FBA (Fulfillment by Amazon)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Gestión FBA Completa</h3>
-                    <p>Manejo profesional de inventario FBA desde preparación hasta almacenamiento en warehouses de Amazon.</p>
-                    <ul class="feature-list">
-                        <li>Preparación para FBA standards</li>
-                        <li>Gestión de shipments optimizada</li>
-                        <li>Optimización de storage fees</li>
-                        <li>Manejo de removals estratégico</li>
-                        <li>Coordinar con centros de cumplimiento</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Account Management</h3>
-                    <p>Gestión profesional de cuenta Amazon Seller Central y mantenimiento de métricas.</p>
-                    <ul class="feature-list">
-                        <li>Mantenimiento de métricas clave</li>
-                        <li>Resolución proactiva de casos</li>
-                        <li>Gestión de inventory performance</li>
-                        <li>Optimización de IPI score</li>
-                        <li>Manejo de políticas de cuenta</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Amazon Advertising</h3>
-                    <p>Gestión estratégica de campañas PPC y optimización de ROI en Amazon Advertising.</p>
-                    <ul class="feature-list">
-                        <li>Campañas PPC automatizadas</li>
-                        <li>Optimización de ACOS</li>
-                        <li>Análisis de keywords competitivas</li>
-                        <li>Reportes de performance</li>
-                        <li>Estrategias de remarketing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Wholesale Tab -->
-        <div id="wholesale" class="tab-content">
-            <h2 class="section-title">Amazon Wholesale</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wholesale Sourcing</h3>
-                    <p>Identificación y relación con proveedores mayoristas autorizados para Amazon.</p>
-                    <ul class="feature-list">
-                        <li>Negociación con distribuidores</li>
-                        <li>Acceso a productos autorizados</li>
-                        <li>Mejores precios mayoristas</li>
-                        <li>Relaciones a largo plazo</li>
+                        <li>Acceso a proveedores verificados</li>
+                        <li>Negociación de mejores precios</li>
                         <li>Verificación de autenticidad</li>
+                        <li>Gestión de relaciones a largo plazo</li>
+                        <li>Control de calidad continuo</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <!-- Análisis de Productos Tab -->
+        <div id="analisis" class="tab-content">
+            <h2 class="section-title">Análisis Avanzado de Productos</h2>
+            <div class="service-grid">
                 <div class="service-card">
-                    <h3>Brand Management</h3>
-                    <p>Gestión de relaciones con marcas y fabricantes para distribución autorizada.</p>
-                    <ul class="feature-list">
-                        <li>Obtención de autorizaciones</li>
-                        <li>Manejo de MAP pricing</li>
-                        <li>Protección de brand integrity</li>
-                        <li>Relaciones con manufacturers</li>
-                        <li>Gestión de catálogos</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Inventory Analytics</h3>
-                    <p>Análisis avanzado de inventario y predicción de demanda para wholesale.</p>
+                    <h3>Investigación de Mercado</h3>
+                    <p>Identificación de oportunidades de producto con alto margen y demanda estable.</p>
                     <ul class="feature-list">
                         <li>Análisis de tendencias de mercado</li>
+                        <li>Identificación de nichos rentables</li>
+                        <li>Evaluación de competencia</li>
+                        <li>Análisis de estacionalidad</li>
                         <li>Predicción de demanda</li>
-                        <li>Optimización de stock levels</li>
-                        <li>Reportes de rentabilidad</li>
-                        <li>Análisis de competencia</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Análisis de Rentabilidad</h3>
+                    <p>Cálculo preciso de márgenes considerando todos los costos operativos.</p>
+                    <ul class="feature-list">
+                        <li>Cálculo de ROI por producto</li>
+                        <li>Análisis de fees de Amazon</li>
+                        <li>Optimización de costos de envío</li>
+                        <li>Proyección de rentabilidad</li>
+                        <li>Análisis de punto de equilibrio</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Optimización de Precios</h3>
+                    <p>Estrategias dinámicas de pricing para maximizar conversiones y margen.</p>
+                    <ul class="feature-list">
+                        <li>Análisis de precios de competencia</li>
+                        <li>Estrategias de pricing dinámico</li>
+                        <li>Optimización para Buy Box</li>
+                        <li>Segmentación por mercado</li>
+                        <li>Monitorización en tiempo real</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cumplimiento Amazon Tab -->
+        <div id="cumplimiento" class="tab-content">
+            <h2 class="section-title">Cumplimiento de Políticas Amazon</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Gestión de Políticas</h3>
+                    <p>Cumplimiento estricto de todas las políticas de Amazon FBM y dropshipping.</p>
+                    <ul class="feature-list">
+                        <li>Cumplimiento políticas de empaque</li>
+                        <li>Gestión de políticas de vendedor</li>
+                        <li>Prevención de suspensiones</li>
+                        <li>Manejo de reclamos y casos</li>
+                        <li>Actualización constante de normativas</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Control de Calidad</h3>
+                    <p>Sistemas de verificación para garantizar productos compatibles con Amazon.</p>
+                    <ul class="feature-list">
+                        <li>Verificación de productos restringidos</li>
+                        <li>Control de autenticidad</li>
+                        <li>Inspección pre-envío</li>
+                        <li>Gestión de garantías</li>
+                        <li>Protocolos de calidad</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Soporte y Resolución</h3>
+                    <p>Gestión profesional de incidencias y soporte al cliente.</p>
+                    <ul class="feature-list">
+                        <li>Atención al cliente especializada</li>
+                        <li>Gestión de devoluciones</li>
+                        <li>Resolución de casos Amazon</li>
+                        <li>Soporte post-venta</li>
+                        <li>Manejo de feedback</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Comparison Section -->
-    <div class="comparison">
+    <!-- Process Flow Section -->
+    <div class="process-flow">
         <div class="container">
-            <h2 class="section-title" style="color: white;">FBM vs FBA - ¿Cuál Elegir?</h2>
-            <div class="comparison-grid">
-                <div class="comparison-card fbm-card">
-                    <h3>Amazon FBM</h3>
-                    <p><strong>Ideal para:</strong></p>
-                    <ul class="comparison-features">
-                        <li>Productos únicos o personalizados</li>
-                        <li>Control total del proceso</li>
-                        <li>Costos operativos más bajos</li>
-                        <li>Flexibilidad en envíos</li>
-                        <li>Inventario de baja rotación</li>
-                        <li>Productos grandes o pesados</li>
-                    </ul>
+            <h2 class="section-title">Nuestro Flujo en Amazon FBM</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-step-number">1</div>
+                    <h4>Análisis de Producto</h4>
+                    <p>Identificamos productos con mejor margen usando análisis de datos avanzado</p>
                 </div>
-                <div class="comparison-card fba-card">
-                    <h3>Amazon FBA</h3>
-                    <p><strong>Ideal para:</strong></p>
-                    <ul class="comparison-features">
-                        <li>Productos de alta rotación</li>
-                        <li>Eligibilidad para Amazon Prime</li>
-                        <li>Escalabilidad rápida</li>
-                        <li>Manejo de customer service</li>
-                        <li>Ventas internacionales</li>
-                        <li>Productos pequeños y ligeros</li>
-                    </ul>
+                <div class="flow-step">
+                    <div class="flow-step-number">2</div>
+                    <h4>Publicación en Amazon</h4>
+                    <p>Creamos listings optimizados en Amazon FBM con estrategias SEO</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">3</div>
+                    <h4>Gestión de Venta</h4>
+                    <p>Monitorizamos ventas y coordinamos con proveedores globales</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">4</div>
+                    <h4>Prep Center</h4>
+                    <p>Enviamos a prep centers para inspección y re-empaque profesional</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">5</div>
+                    <h4>Envío al Cliente</h4>
+                    <p>Gestionamos envío directo al cliente final con tracking</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits">
+        <div class="container">
+            <h2 class="section-title">Ventajas de Nuestro Sistema</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Análisis Data-Driven</h3>
+                    <p>Tomamos decisiones basadas en datos reales de mercado y análisis de rentabilidad</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Cumplimiento Garantizado</h3>
+                    <p>100% de cumplimiento con políticas de Amazon y estándares de calidad</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Escalabilidad</h3>
+                    <p>Sistema diseñado para crecer rápidamente sin comprometer calidad</p>
                 </div>
             </div>
         </div>
@@ -522,7 +568,7 @@
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
-            <p>Amazon FBM & FBA Experts</p>
+            <p>Dropshipping Especializado en Amazon FBM</p>
             <div style="margin-top: 20px; opacity: 0.8;">
                 Andres E Ventura | insiriusworld@gmail.com
             </div>
