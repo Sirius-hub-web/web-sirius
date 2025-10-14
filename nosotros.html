@@ -5,13 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Sirius Usa LLC</title>
     <style>
-        /* Mantenemos todos tus estilos visuales (están excelentes) */
-        /* Solo cambiamos el CONTENIDO, no el diseño */
+        /* Mantenemos todos los estilos pero agregamos reforzadores visuales */
+        
+        /* Nuevos estilos para reforzar */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-gold), #fbbf24);
+            color: var(--secondary-black);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.3em;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+            border: 3px solid var(--white);
+        }
+        
+        .model-emphasis {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+            border-left: 5px solid var(--accent-gold);
+        }
+        
+        .partnership-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--secondary-black);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        
+        .value-item.enhanced {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.05);
+            position: relative;
+        }
+        
+        .value-item.enhanced::after {
+            content: '★';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: var(--accent-gold);
+            color: var(--secondary-black);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation CORREGIDA -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -31,20 +87,31 @@
     </nav>
 
     <div class="page-container">
-        <!-- Hero Section ACTUALIZADO -->
+        <!-- Hero Section REFORZADO -->
         <div class="about-hero">
             <h1>El Equipo detrás de Sirius USA LLC</h1>
-            <p><strong>Operamos con nuestras cuentas verificadas de Amazon y eBay.</strong> Creamos partnerships estratégicos donde todos ganamos.</p>
+            <p><strong>Operamos con NUESTRAS cuentas verificadas de Amazon y eBay.</strong> No gestionamos cuentas de terceros - creamos partnerships estratégicos donde todos ganamos.</p>
+            <div class="partnership-badge">
+                🚀 MODELO 100% REVENUE SHARING
+            </div>
         </div>
         
-        <!-- Misión y Visión ACTUALIZADOS -->
+        <!-- BANNER DE REFUERZO -->
+        <div class="highlight-box">
+            💎 <strong>DIFERENCIADOR CLAVE:</strong> Operamos con NUESTRAS cuentas verificadas - Tú participas en las ganancias SIN riesgos de suspensión
+        </div>
+        
+        <!-- Misión y Visión REFORZADOS -->
         <div class="mission-vision-grid">
             <div class="mission-card">
                 <div class="icon-container">
                     <i class="fas fa-handshake"></i>
                 </div>
                 <h2>Nuestra Misión</h2>
-                <p>Crecer junto a socios estratégicos a través de un modelo transparente de revenue sharing. Operamos con <strong>nuestras cuentas verificadas de Amazon y eBay</strong> para minimizar riesgos y maximizar oportunidades de crecimiento mutuo.</p>
+                <p><strong>Crecer junto a socios estratégicos</strong> a través de un modelo transparente de revenue sharing. Operamos con <strong>nuestras cuentas verificadas de Amazon y eBay</strong> para minimizar riesgos y maximizar oportunidades de crecimiento mutuo.</p>
+                <div style="margin-top: 20px; padding: 15px; background: #f0f9ff; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+                    <strong>🔒 PARA INGRESORES:</strong> Tu capital está protegido con nuestras cuentas verificadas y procesos auditados.
+                </div>
             </div>
             
             <div class="vision-card">
@@ -52,43 +119,81 @@
                     <i class="fas fa-chart-network"></i>
                 </div>
                 <h2>Nuestra Visión</h2>
-                <p>Ser la red de partnerships más confiable en e-commerce, donde inversores, proveedores y prep centers encuentran <strong>oportunidades reales de crecimiento</strong> a través de un modelo colaborativo y transparente.</p>
+                <p>Ser la red de partnerships más confiable en e-commerce, donde <strong>inversores, proveedores y prep centers</strong> encuentran oportunidades reales de crecimiento a través de un modelo colaborativo y transparente.</p>
+                <div style="margin-top: 20px; padding: 15px; background: #fff7ed; border-radius: 10px; border-left: 4px solid var(--accent-gold);">
+                    <strong>🤝 PARA PROVEEDORES:</strong> Expandimos tu mercado sin que gestiones marketplaces - nosotros operamos, tú produces.
+                </div>
             </div>
         </div>
         
-        <!-- Valores ACTUALIZADOS -->
+        <!-- ENFASIS DEL MODELO -->
+        <div class="model-emphasis">
+            <h3 style="color: var(--accent-gold); margin-bottom: 20px;">✨ NUESTRO COMPROMISO CON LOS SOCIOS</h3>
+            <p style="font-size: 1.3em; font-weight: 600;">
+                "No somos una agencia de gestión de cuentas. <strong>Operamos nuestras propias cuentas verificadas</strong> y compartimos las ganancias con socios estratégicos."
+            </p>
+        </div>
+        
+        <!-- Valores REFORZADOS -->
         <div class="values-section">
-            <h2 class="section-title">Nuestros Pilares</h2>
+            <h2 class="section-title">Los 4 Pilares de Nuestro Éxito</h2>
             <div class="values-grid">
-                <div class="value-item">
+                <div class="value-item enhanced">
                     <i class="fas fa-chess-knight"></i>
-                    <h3>Cuentas Propias</h3>
-                    <p>Operamos exclusivamente con <strong>nuestras cuentas verificadas</strong> de Amazon y eBay. Eliminamos el riesgo para nuestros socios y garantizamos cumplimiento total.</p>
+                    <h3>Cuentas 100% Propias</h3>
+                    <p><strong>Cero gestión de cuentas de terceros.</strong> Operamos exclusivamente con <strong>nuestras cuentas verificadas</strong> de Amazon y eBay. Eliminamos el riesgo para nuestros socios.</p>
                 </div>
                 
-                <div class="value-item">
+                <div class="value-item enhanced">
                     <i class="fas fa-percentage"></i>
-                    <h3>Revenue Sharing</h3>
-                    <p>Modelo 100% basado en participación de ganancias. <strong>Tú ganas cuando nosotros ganamos</strong>. Reportes transparentes y pagos puntuales.</p>
+                    <h3>Revenue Sharing Real</h3>
+                    <p><strong>Modelo 100% basado en participación de ganancias.</strong> Tú ganas cuando nosotros ganamos. Reportes transparentes y pagos puntuales.</p>
                 </div>
                 
-                <div class="value-item">
+                <div class="value-item enhanced">
                     <i class="fas fa-users"></i>
-                    <h3>Partnerships Reales</h3>
-                    <p>No buscamos clientes, buscamos <strong>socios estratégicos</strong>. Inversores, proveedores y prep centers crecen junto a nosotros.</p>
+                    <h3>Partnerships Estratégicos</h3>
+                    <p><strong>No buscamos clientes, buscamos socios.</strong> Inversores, proveedores y prep centers crecen junto a nosotros en relaciones de largo plazo.</p>
                 </div>
                 
-                <div class="value-item">
+                <div class="value-item enhanced">
                     <i class="fas fa-shield-check"></i>
                     <h3>Cumplimiento Total</h3>
-                    <p>Garantizamos adherencia a todas las políticas de marketplaces. <strong>Tu inversión está segura</strong> con nuestras cuentas verificadas y procesos auditados.</p>
+                    <p><strong>Garantizamos adherencia a todas las políticas.</strong> Tu inversión está segura con nuestras cuentas verificadas y procesos auditados.</p>
                 </div>
             </div>
         </div>
+
+        <!-- NUEVA SECCIÓN: Por Qué Elegirnos -->
+        <div class="mission-vision-grid" style="margin-top: 60px;">
+            <div class="mission-card">
+                <div class="icon-container" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2>Para Inversores</h2>
+                <p><strong>Retorno sobre ventas con mínimo riesgo:</strong><br>
+                • Tus fondos en nuestras cuentas verificadas<br>
+                • Cero riesgo de suspensiones de cuentas<br>
+                • Reportes financieros transparentes<br>
+                • Diversificación automática</p>
+            </div>
+            
+            <div class="vision-card">
+                <div class="icon-container" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <h2>Para Proveedores</h2>
+                <p><strong>Expansión sin complicaciones:</strong><br>
+                • Vendemos tus productos sin que gestiones marketplaces<br>
+                • Pagos garantizados y puntuales<br>
+                • Crecimiento de mercado orgánico<br>
+                • Enfoque en lo que mejor haces: producir</p>
+            </div>
+        </div>
         
-        <!-- Equipo ACTUALIZADO -->
+        <!-- Equipo REFORZADO -->
         <div class="team-section">
-            <h2 class="section-title">Nuestro Equipo</h2>
+            <h2 class="section-title">El Equipo que Opera Nuestras Cuentas</h2>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-photo">
@@ -96,7 +201,10 @@
                     </div>
                     <h3>Andres E. Ventura</h3>
                     <p class="member-role">CEO & Fundador</p>
-                    <p class="member-bio">Especialista en e-commerce con más de 5 años operando cuentas propias en Amazon FBM y eBay multi-cuenta. Creador del modelo de revenue sharing que beneficia a todos los socios.</p>
+                    <p class="member-bio">Especialista en e-commerce con más de 5 años operando <strong>cuentas propias</strong> en Amazon FBM y eBay multi-cuenta. Creador del modelo de revenue sharing que beneficia a todos los socios.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 8px;">
+                        <strong>Filosofía:</strong> "Crecemos juntos o no crecemos"
+                    </div>
                 </div>
                 
                 <div class="team-member">
@@ -104,8 +212,11 @@
                         <i class="fas fa-chess-queen"></i>
                     </div>
                     <h3>Equipo de Operaciones</h3>
-                    <p class="member-role">Gestión de Marketplaces</p>
-                    <p class="member-bio">Expertos en listing optimization, PPC estratégico y cumplimiento de políticas. Gestionan <strong>nuestras cuentas verificadas</strong> con máxima eficiencia.</p>
+                    <p class="member-role">Gestión de Nuestras Cuentas</p>
+                    <p class="member-bio">Expertos en listing optimization, PPC estratégico y cumplimiento de políticas. Gestionan <strong>nuestras cuentas verificadas</strong> con máxima eficiencia y transparencia.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #fff7ed; border-radius: 8px;">
+                        <strong>Métrica clave:</strong> 0 suspensiones de cuentas
+                    </div>
                 </div>
                 
                 <div class="team-member">
@@ -115,14 +226,17 @@
                     <h3>Equipo de Partnerships</h3>
                     <p class="member-role">Relación con Socios</p>
                     <p class="member-bio">Dedicados a crear y mantener relaciones de largo plazo con inversores, proveedores y prep centers. Tu punto de contacto para crecimiento conjunto.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 8px;">
+                        <strong>Compromiso:</strong> Transparencia total en reportes
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Experiencia ACTUALIZADA -->
+        <!-- Experiencia REFORZADA -->
         <div class="experience-section">
-            <h2>Nuestra Trayectoria</h2>
-            <p>Más de 5 años operando <strong>nuestras propias cuentas</strong> en Amazon y eBay nos han enseñado qué funciona realmente</p>
+            <h2>Resultados que Generan Confianza</h2>
+            <p>Más de 5 años operando <strong>nuestras propias cuentas</strong> en Amazon y eBay nos han permitido perfeccionar un modelo de revenue sharing que beneficia a todos los socios.</p>
             
             <div class="stats-container">
                 <div class="stat-box">
@@ -135,17 +249,25 @@
                 </div>
                 <div class="stat-box">
                     <h3>0</h3>
-                    <p>Suspensiones de Cuentas</p>
+                    <p>Suspensiones</p>
                 </div>
                 <div class="stat-box">
                     <h3>100%</h3>
-                    <p>Modelo Revenue Share</p>
+                    <p>Revenue Share</p>
                 </div>
+            </div>
+            
+            <!-- NUEVO: Llamada a acción específica -->
+            <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 2px solid var(--accent-gold);">
+                <h3 style="color: var(--accent-gold); margin-bottom: 15px;">¿Listo para ser nuestro próximo socio estratégico?</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1em;">Inversores, proveedores y prep centers - crecemos juntos</p>
+                <a href="contacto.html" style="display: inline-block; background: var(--accent-gold); color: var(--secondary-black); padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em;">
+                    Iniciar Partnership
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Footer ACTUALIZADO -->
     <div class="footer">
         <div class="container">
             <p>&copy; 2024 Sirius Usa LLC. Todos los derechos reservados.</p>
@@ -157,7 +279,31 @@
     </div>
 
     <script>
-        // Mantenemos el mismo JavaScript de animaciones
+        // Efectos de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.mission-card, .vision-card, .value-item, .team-member, .stat-box, .highlight-box, .model-emphasis');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 </html>
