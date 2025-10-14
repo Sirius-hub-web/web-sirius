@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AGREGAR ESTAS META ETIQUETAS PARA EVITAR CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Contacto - Sirius Usa LLC</title>
     <style>
         /* TUS ESTILOS ACTUALES - SE MANTIENEN IGUAL */
@@ -834,7 +838,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     source: document.getElementById('source').value
                 };
                 
-                console.log('📤 Enviando datos a Google Sheets:', formData);
+                console.log('📤 Enviando datos SOLO a Google Sheets:', formData);
                 
                 // Enviar SOLO a Google Apps Script - NO EMAIL
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -859,7 +863,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     // Hacer scroll suave al mensaje de éxito
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
-                    console.log('✅ Datos guardados en Google Sheets correctamente');
+                    console.log('✅ Datos guardados SOLO en Google Sheets correctamente');
                 } else {
                     throw new Error(result.message);
                 }
