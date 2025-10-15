@@ -795,8 +795,8 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
     </div>
 
     <script>
-        // ✅ NUEVA URL CORRECTA
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxA7xccr2B0eSS_-t7SYpHN8rbr_HTiURtwlzPU96Gw5QGueQR2CR3uGJiJPhMVxcrTWQ/exec';
+        // ✅ URL DEL WORKER CLOUDFLARE - RESUELVE CORS
+        const WORKER_URL = 'https://sirius-form-proxy.insiriusworld.workers.dev';
         
         document.getElementById('contact-form-element').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -829,10 +829,10 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     source: document.getElementById('source').value
                 };
                 
-                console.log('📤 Enviando datos a Google Sheets:', formData);
+                console.log('📤 Enviando datos al Worker Cloudflare:', formData);
                 
-                // Enviar a la NUEVA URL
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                // Enviar al WORKER (no directamente a Google Apps Script)
+                const response = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -840,7 +840,7 @@ Ej: Me interesa el modelo de revenue sharing, cuéntame más..."></textarea>
                     body: JSON.stringify(formData)
                 });
                 
-                console.log('📨 Respuesta recibida:', response);
+                console.log('📨 Respuesta recibida del Worker:', response);
                 
                 if (!response.ok) {
                     throw new Error(`Error HTTP: ${response.status}`);
